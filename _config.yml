@@ -9,7 +9,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "Durham, North Carolina"
-title                    : Steven Pilato
+title                    : "Steven Pilato"
 title_separator          : "-"
 name                     : Steven Pilato
 description              : "Data Science Portfolio"
