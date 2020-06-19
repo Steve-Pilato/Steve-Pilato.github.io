@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-  image: [page_fig](/images/bird_about_resize.JPG) 
+  image: [page_fig]("/images/bird_about_resize.JPG") 
 ---
 
 I am a data science graduate student at Seton Hall University, and I come from a background in quantitative neuroscience.
