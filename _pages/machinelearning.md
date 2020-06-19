@@ -1,7 +1,7 @@
 ---
 layout: posts
 permalink: /data-wrangling/
-title: "Data Wrangling projects"
+title: "Projects/Blog"
 author_profile: true
 header:
   image: "/images/Durham-cityscape_bigstock2.jpg"
