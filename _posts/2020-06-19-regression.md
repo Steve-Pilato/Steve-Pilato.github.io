@@ -13,27 +13,8 @@ mathjax: "true"
 
 ### We can change the representation of the linear system using matrix notation. 
 Matrix equation: Ax = b where A is the matrix containing predictors, x is the matrix containing the coefficients, and b is the target/dependent variable.
-\begin{equation}
-    \begin{bmatrix}
-    1  & x_{1} \\
-    1 & x_{2} \\
-    ... & ... \\
-    1 & x_{n-1}\\
-    1 & x_{n}
-    \end{bmatrix} 
-    \begin{bmatrix}
-    a\\
-    b_{1}
-    \end{bmatrix} =
-    \begin{bmatrix}
-    y_{1} \\
-    y_{2} \\
-    ... \\
-    y_{n-1} \\
-    y_{n}
-    \end{bmatrix} 
-\end{equation}
 
+![second equation](https://latex.codecogs.com/gif.latex?%5CLARGE%20%5Cbegin%7Bequation%7D%20%5Cbegin%7Bbmatrix%7D%201%20%26%20x_%7B1%7D%20%5C%5C%201%20%26%20x_%7B2%7D%20%5C%5C%20...%20%26%20...%20%5C%5C%201%20%26%20x_%7Bn-1%7D%5C%5C%201%20%26%20x_%7Bn%7D%20%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D%20a%5C%5C%20b_%7B1%7D%20%5Cend%7Bbmatrix%7D%20%3D%20%5Cbegin%7Bbmatrix%7D%20y_%7B1%7D%20%5C%5C%20y_%7B2%7D%20%5C%5C%20...%20%5C%5C%20y_%7Bn-1%7D%20%5C%5C%20y_%7Bn%7D%20%5Cend%7Bbmatrix%7D%20%5Cend%7Bequation%7D)
 
 ### We can solve for x (a and b) by performing the following operations
 \begin{equation}(A^{T}A)^{-1}(A^{T}A)x = (A^{T}A)^{-1}A^{T}b \ or \ x = (A^{T}A)^{-1}A^{T}b\end{equation}
