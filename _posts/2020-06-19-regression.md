@@ -110,7 +110,7 @@ plt.xlabel("x - Independent Variable")
 plt.ylabel("y - Dependent Variable")
 ```
 
-![output](/image/regression/xvy_2.png)
+![output](/images/regression/xvy_2.png)
 
 
 ### Based on the above figure, we can see that there is a clear linear relationship between x and y (What a strange coincidence)
