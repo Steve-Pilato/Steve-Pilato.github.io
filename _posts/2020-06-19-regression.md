@@ -9,7 +9,7 @@ mathjax: "true"
 
 ### You can think about this as solving a system of linear equations. For example, if we had an independent and dependent variable with n observations, we could write out the series of equations like this...
 
-![first equation](https://latex.codecogs.com/gif.latex?%5Cbegin%7Balign*%7D%20y_%7B1%7D%20%3D%20a%20&plus;%20b_%7B1%7Dx_%7B1%7D%20%5C%5C%20y_%7B2%7D%20%3D%20a%20&plus;%20b_%7B1%7Dx_%7B2%7D%20%5C%5C%20..............%20%5C%5C%20y_%7Bn-1%7D%20%3D%20a%20&plus;%20b_%7B1%7Dx_%7Bn-1%7D%5C%5C%20y_%7Bn%7D%20%3D%20a%20&plus;%20b_%7B1%7Dx_%7Bn%7D%20%5Cend%7Balign*%7D)
+![first equation](https://latex.codecogs.com/gif.latex?%5CLARGE%20%5Cbegin%7Balign*%7D%20y_%7B1%7D%20%3D%20a%20&plus;%20b_%7B1%7Dx_%7B1%7D%20%5C%5C%20y_%7B2%7D%20%3D%20a%20&plus;%20b_%7B1%7Dx_%7B2%7D%20%5C%5C%20..............%20%5C%5C%20y_%7Bn-1%7D%20%3D%20a%20&plus;%20b_%7B1%7Dx_%7Bn-1%7D%5C%5C%20y_%7Bn%7D%20%3D%20a%20&plus;%20b_%7B1%7Dx_%7Bn%7D%20%5Cend%7Balign*%7D)
 
 ### We can change the representation of the linear system using matrix notation. 
 Matrix equation: Ax = b where A is the matrix containing predictors, x is the matrix containing the coefficients, and b is the target/dependent variable.
