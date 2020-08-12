@@ -1,4 +1,9 @@
-# Using Text Mining to  Compare Trump's (2020) and Obama's (2016) State of the Union Address
+---
+title: "Using Text Mining to  Compare Trump's (2020) and Obama's (2016) State of the Union Address"
+date: 2020-08-12
+tags: [text mining, correlation, data science, R]
+mathjax: "true"
+---
 
 ## Using the r package rvest, I was able to web scrape Trump's (2020) and Obama's (2016) state of the union addresses. I will create a different post that displays how I extracted the text from each webpage. 
 
