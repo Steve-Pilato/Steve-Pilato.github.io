@@ -206,7 +206,6 @@ ggplot(Obama_Trump_normalized, aes(x = n.x, y = n.y, color = abs(n.x - n.y))) +
 
 ## Pearson’s Correlation Coefficient 
 
-
 ```R
 # Combine numeric vectors 
 Obama_Trump_Similarity <- cbind(Obama_Trump_normalized$n.x, Obama_Trump_normalized$n.y)
@@ -274,11 +273,11 @@ barplot(as.matrix(state_of_the_union_sentiment[state_of_the_union_sentiment$Pres
 ```
 
 
-![png](output_23_0.png)
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/State%20of%20the%20union/Obama_nrc.png)
 
 
 
-![png](output_23_1.png)
+![png](https://github.com/Steve-Pilato/Steve-Pilato.github.io/blob/master/images/State%20of%20the%20union/Trump_nrc.png)
 
 
 ## If you have any questions about my code or I how I performed a certain analysis, please feel free to contact me. 
