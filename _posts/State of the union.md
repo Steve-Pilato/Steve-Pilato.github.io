@@ -147,7 +147,7 @@ ggplot(data = top_10_df, aes(x = reorder(word, -n), y = n, fill = President)) +
     Selecting by n
     
 
-
+![output](/images/regression/xvy_2.png)
 ![output](/images/State of the union/output_9_1.png)
 
 
