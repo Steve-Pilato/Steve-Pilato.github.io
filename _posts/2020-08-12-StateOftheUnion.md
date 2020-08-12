@@ -13,10 +13,9 @@ mathjax: "true"
 ```R
 options(warn=-1)
 # Import libraries
-library(tidyverse) #Reading csv files
+library(tidyverse) #Reading csv files and data manipulation
 library(tidytext) #Sentiment analysis and text analytics 
 library(tm) #Data cleaning 
-library(scales) #For data visualization 
 library(scales) #For data visualization 
 ```
 
