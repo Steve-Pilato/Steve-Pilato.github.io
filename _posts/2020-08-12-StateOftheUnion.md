@@ -166,14 +166,10 @@ ggplot(data = top_10_df_nostop, aes(x = reorder(word, -n), y = n, fill = Preside
     
 
 ![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/State%20of%20the%20union/output_11_1.png)
-
-
-
 ### That looks much better. 
 
+
 # Now, let's visualize the similarity between Obama's (2016) and Trump's (2020) speeches
-
-
 
 ```R
 #Subset Obama and Trump speech
@@ -204,7 +200,7 @@ ggplot(Obama_Trump_normalized, aes(x = n.x, y = n.y, color = abs(n.x - n.y))) +
 ![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/State%20of%20the%20union/output_14_0.png)
 
 
-## Pearson’s Correlation Coefficient 
+## Pearson’s Correlation Coefficient (Quantifies similarity  between the two speeches)
 
 ```R
 # Combine numeric vectors 
