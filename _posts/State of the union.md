@@ -183,7 +183,7 @@ ggplot(data = top_10_df_nostop, aes(x = reorder(word, -n), y = n, fill = Preside
     
 
 
-![png](output_11_1.png)
+![output](/images/State of the union/output_11_1.png)
 
 
 ### That looks much better. 
@@ -218,7 +218,7 @@ ggplot(Obama_Trump_normalized, aes(x = n.x, y = n.y, color = abs(n.x - n.y))) +
 ```
 
 
-![png](output_14_0.png)
+![output](/images/State of the union/output_19_0.png)
 
 
 ## Pearson’s Correlation Coefficient 
@@ -265,8 +265,7 @@ ggplot(data = state_of_the_union_sentiment, aes(x = President, y = diff)) +
 ```
 
 
-![png](output_19_0.png)
-
+![output](/images/State of the union/output_19_0.png)
 
 ### So, it look like Trump's state of the union (2020) address was more positive overall than Obama's state of the union address (2016). This could be a result of many different things, such as economy at the time and more. 
 
