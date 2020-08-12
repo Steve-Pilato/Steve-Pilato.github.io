@@ -143,13 +143,10 @@ ggplot(data = top_10_df, aes(x = reorder(word, -n), y = n, fill = President)) +
         theme(plot.title = element_text(hjust = 0.5)) 
 
 ```
-
-    Selecting by n
     
 
-
-![png](output_9_1.png)
-
+![png]
+(https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/State%20of%20the%20union/output_9_1.png
 
 ## When you look at these words, they do not seem informative. Most of these words are common words, known as stopwords. These words can be filtered out.  
 
@@ -183,12 +180,10 @@ ggplot(data = top_10_df_nostop, aes(x = reorder(word, -n), y = n, fill = Preside
              axis.text.x = element_text(angle = 65, hjust = 1)) 
 ```
 
-    Joining, by = "word"
-    Selecting by n
     
 
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/State%20of%20the%20union/output_11_1.png)
 
-![png](output_11_1.png)
 
 
 ### That looks much better. 
@@ -223,7 +218,7 @@ ggplot(Obama_Trump_normalized, aes(x = n.x, y = n.y, color = abs(n.x - n.y))) +
 ```
 
 
-![png](output_14_0.png)
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/State%20of%20the%20union/output_14_0.png)
 
 
 ## Pearson’s Correlation Coefficient 
@@ -270,7 +265,7 @@ ggplot(data = state_of_the_union_sentiment, aes(x = President, y = diff)) +
 ```
 
 
-![png](output_19_0.png)
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/State%20of%20the%20union/output_19_0.png)
 
 
 ### So, it look like Trump's state of the union (2020) address was more positive overall than Obama's state of the union address (2016). This could be a result of many different things, such as economy at the time and more. 
