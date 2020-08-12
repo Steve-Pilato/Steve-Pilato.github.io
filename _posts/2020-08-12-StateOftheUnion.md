@@ -85,7 +85,7 @@ state_of_the_union_df <- rbind(Obama_2016, Trump_2020)
 #Perform tokenization and calculate word frequencies 
 state_of_the_union_df_tidy <- state_of_the_union_df %>%
      group_by(President) %>%
-	   unnest_tokens(word, text) %>% 
+     unnest_tokens(word, text) %>% 
      count(word, sort = T)
 
 #Display new data frame
@@ -143,7 +143,7 @@ state_of_the_union_df$text <- removePunctuation(state_of_the_union_df$text) #Rem
 #Perform the anti_join operation on the state_of_the_union_df_tidy data frame
 state_of_the_union_removed_stopwords <- state_of_the_union_df %>%
      group_by(President) %>%
-	   unnest_tokens(word, text, to_lower = TRUE) %>% 
+     unnest_tokens(word, text, to_lower = TRUE) %>% 
      anti_join(stop_words) %>%
      count(word, sort = T) 
 
@@ -225,7 +225,7 @@ print(paste("Correlation between Trump and Obama Speech = ", speech_correlation[
 #Calculate the difference  between the positive and negative sentiment 
 state_of_the_union_sentiment <- state_of_the_union_df %>%
      group_by(President) %>%
-	 unnest_tokens(word, text) %>%
+     unnest_tokens(word, text) %>%
      anti_join(stop_words, by = "word") %>%
      inner_join(get_sentiments("bing"), by = "word") %>%
      count(sentiment) %>%
@@ -256,7 +256,7 @@ ggplot(data = state_of_the_union_sentiment, aes(x = President, y = diff)) +
 ```R
 state_of_the_union_sentiment <- state_of_the_union_df %>%
      group_by(President) %>%
-	 unnest_tokens(word, text) %>%
+     unnest_tokens(word, text) %>%
      anti_join(stop_words, by = "word") %>%
      inner_join(get_sentiments("nrc"), by = "word") %>%
      count(sentiment) %>%
