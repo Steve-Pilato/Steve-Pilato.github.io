@@ -273,7 +273,7 @@ barplot(as.matrix(state_of_the_union_sentiment[state_of_the_union_sentiment$Pres
 
 
 
-![png](https://github.com/Steve-Pilato/Steve-Pilato.github.io/blob/master/images/State%20of%20the%20union/Trump_nrc.png)
 
+![png](https://github.com/Steve-Pilato/Steve-Pilato.github.io/blob/master/images/State%20of%20the%20union/Trump_nrc.png)
 
 ## If you have any questions about my code or I how I performed a certain analysis, please feel free to contact me. 
