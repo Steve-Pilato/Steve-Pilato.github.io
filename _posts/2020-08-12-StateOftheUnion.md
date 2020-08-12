@@ -39,21 +39,6 @@ head(Obama_2016)
 print("Trump 2020")
 head(Trump_2020)
 ```
-
-    Parsed with column specification:
-    cols(
-      X1 = col_double(),
-      text = col_character(),
-      President = col_character()
-    )
-    Parsed with column specification:
-    cols(
-      X1 = col_double(),
-      text = col_character(),
-      President = col_character()
-    )
-    
-
     [1] "Obama 2016"
     
 
@@ -146,7 +131,7 @@ ggplot(data = top_10_df, aes(x = reorder(word, -n), y = n, fill = President)) +
     
 
 ![png]
-(https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/State%20of%20the%20union/output_9_1.png
+(https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/State%20of%20the%20union/output_9_1.png)
 
 ## When you look at these words, they do not seem informative. Most of these words are common words, known as stopwords. These words can be filtered out.  
 
