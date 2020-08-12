@@ -130,8 +130,8 @@ ggplot(data = top_10_df, aes(x = reorder(word, -n), y = n, fill = President)) +
 ```
     
 
-![png]
-(https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/State%20of%20the%20union/output_9_1.png)
+![output]
+(Steve-Pilato.github.io/images/State_of_the_union/output_9_1.png)
 
 ## When you look at these words, they do not seem informative. Most of these words are common words, known as stopwords. These words can be filtered out.  
 
