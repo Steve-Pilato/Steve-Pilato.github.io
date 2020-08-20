@@ -130,10 +130,6 @@ corpus <- corpus(df2, text_field = 'review', doc_field = 'id') #Create corpus ob
 dfm <-  dfm(corpus, tolower = T, remove = stopwords('english')) #Calculate document term-frequency matrix
 ```
 
-    Warning message:
-    "Unknown or uninitialised column: `sentiment`."Warning message:
-    "doc_field argument is not used."
-
 # Model training and evaluation (I will be using Sklearn's functions in this section)
 
 ## Split data into training and testing sets
@@ -165,8 +161,6 @@ print(paste('Logistic Accuracy = ', logistic_accuracy))
 
 
     LogisticRegression(max_iter=1000.0)
-
-
     [1] "Logistic Accuracy =  0.884266666666667"
     
 
@@ -184,8 +178,6 @@ print(paste('nb_baseline = ', nb_baseline))
 
 
     MultinomialNB()
-
-
     [1] "nb_baseline =  0.863"
     
 
@@ -212,7 +204,6 @@ y_pred <- nb_best$predict(X_test) #Predict testing data
 nb_hp_best <- sk.metrics$accuracy_score(y_test, y_pred) #accuracy
 print(paste('nb_hp_best = ', nb_hp_best))
 ```
-
     [1] "nb_hp_best =  0.863066666666667"
     
 
@@ -227,11 +218,6 @@ y_pred <- Lsvm_estimator$predict(X_test) #Predict testing data
 Lsvm <- sk.metrics$accuracy_score(y_test, y_pred) #accuracy
 print(paste('Lsvm = ', Lsvm))
 ```
-
-
-    LinearSVC(max_iter=5000.0)
-
-
     [1] "Lsvm =  0.868466666666667"
     
 
@@ -351,11 +337,6 @@ y_pred <- log_estimator$predict(X_test) #Predict testing data
 logistic_accuracy <- sk.metrics$accuracy_score(y_test, y_pred) #accuracy
 print(paste('Logistic Accuracy = ', logistic_accuracy))
 ```
-
-
-    LogisticRegression(max_iter=1000.0)
-
-
     [1] "Logistic Accuracy =  0.9098"
     
 
@@ -370,11 +351,6 @@ y_pred <- nb_estimator$predict(X_test) #Predict testing data
 nb_baseline <- sk.metrics$accuracy_score(y_test, y_pred) #accuracy
 print(paste('nb_baseline = ', nb_baseline))
 ```
-
-
-    MultinomialNB()
-
-
     [1] "nb_baseline =  0.8998"
     
 
@@ -401,7 +377,6 @@ y_pred <- nb_best$predict(X_test) #Predict testing data
 nb_hp_best <- sk.metrics$accuracy_score(y_test, y_pred) #accuracy
 print(paste('nb_hp_best = ', nb_hp_best))
 ```
-
     [1] "nb_hp_best =  0.9002"
     
 
@@ -416,11 +391,6 @@ y_pred <- Lsvm_estimator$predict(X_test) #Predict testing data
 Lsvm <- sk.metrics$accuracy_score(y_test, y_pred) #accuracy
 print(paste('Lsvm = ', Lsvm))
 ```
-
-
-    LinearSVC(max_iter=5000.0)
-
-
     [1] "Lsvm =  0.909266666666667"
     
 
@@ -438,13 +408,6 @@ y_pred <- ensemble$predict(X_test) #Predict testing data
 voting_ensemble <- sk.metrics$accuracy_score(y_test, y_pred)
 print(paste('voting_ensemble = ', voting_ensemble))
 ```
-
-
-    VotingClassifier(estimators=[('log_reg', LogisticRegression(max_iter=1000.0)),
-                                 ('nb', MultinomialNB(alpha=0.328)),
-                                 ('LSVM', LinearSVC(max_iter=5000.0))])
-
-
     [1] "voting_ensemble =  0.911866666666667"
     
 
