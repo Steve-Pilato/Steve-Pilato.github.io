@@ -51,10 +51,6 @@ table(df$sentiment)
 
 
     [1] "Number of Positive and Negtive Reviews"
-    
-
-
-    
     negative positive 
        25000    25000 
 
