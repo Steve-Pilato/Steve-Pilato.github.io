@@ -100,7 +100,7 @@ ggplot(data = df_tidy, aes(x = Rating, y = diff, color = Rating)) +
 ```
 
 
-![png](output_5_0.png)
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/IMDB_project_figures/output_5_0.png)
 
 
 ### Based on the above violin plots, the positive reviews do seem to tend toward being more positive than the negative reviews
@@ -290,7 +290,7 @@ ggplot(data = results, aes(x = Classifier, y = Accuracy)) +
 ```
 
 
-![png](output_23_0.png)
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/IMDB_project_figures/output_23_0.png)
 
 
 ### Though the above model accuracies are adequate, they could be much better
@@ -479,7 +479,7 @@ ggplot(data = results, aes(x = Classifier, y = Accuracy)) +
 ```
 
 
-![png](output_41_0.png)
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/IMDB_project_figures/output_41_0.png)
 
 
 ### It look like adding bigrams and trigrams increased the accuracy scores for the above models
