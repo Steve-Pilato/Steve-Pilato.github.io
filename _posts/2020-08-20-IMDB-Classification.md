@@ -36,15 +36,6 @@ head(df)
 print('Number of Positive and Negtive Reviews')
 table(df$sentiment)
 ```
-
-    Parsed with column specification:
-    cols(
-      review = col_character(),
-      sentiment = col_character()
-    )
-    
-
-
 <table>
 <thead><tr><th scope=col>review</th><th scope=col>sentiment</th></tr></thead>
 <tbody>
