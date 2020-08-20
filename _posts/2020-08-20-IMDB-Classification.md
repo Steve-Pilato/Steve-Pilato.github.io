@@ -12,7 +12,7 @@ mathjax: "true"
 #Import R libraries 
 library(tidytext) #Sentiment calculation 
 library(tidyverse) #Data preprocessing 
-library(quanteda) #Creating document term Matricies 
+library(quanteda) #Creating document term Matrices  
 library(reticulate) #Python functions
 
 #Import python libraries
