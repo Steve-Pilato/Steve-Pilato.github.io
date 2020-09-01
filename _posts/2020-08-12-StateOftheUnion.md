@@ -115,7 +115,7 @@ head(state_of_the_union_df_tidy)
 #Pull top 10 most frequent words from each speech
 top_10_df <- top_n(state_of_the_union_df_tidy, 10) 
 
-# Use plot the most frequent words
+# Plot the most frequent words
 ggplot(data = top_10_df, aes(x = reorder(word, -n), y = n, fill = President)) +
         geom_col(color = 'black') +
         facet_wrap(~ President, scales = "free") +
@@ -150,7 +150,7 @@ state_of_the_union_removed_stopwords <- state_of_the_union_df %>%
 #Pull top 10 most frequent words from each speech
 top_10_df_nostop <- top_n(state_of_the_union_removed_stopwords, 10) 
 
-# Use plot the most frequent words
+# Plot the most frequent words
 ggplot(data = top_10_df_nostop, aes(x = reorder(word, -n), y = n, fill = President )) +
         geom_col(color = 'black') +
         facet_wrap(~ President, scales = "free") +
