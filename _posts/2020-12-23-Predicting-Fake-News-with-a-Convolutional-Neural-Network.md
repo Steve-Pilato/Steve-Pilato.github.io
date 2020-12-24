@@ -1,3 +1,11 @@
+---
+title: " Predicting Fake News with a Convolutional Neural Network "
+date: 2020-12-23
+tags: [NLP, machine learning, classification, data science, Python]
+mathjax: "true"
+---
+
+
 ```python
 #Text preprocessing
 import nltk
