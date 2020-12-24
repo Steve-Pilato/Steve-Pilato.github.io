@@ -5,7 +5,7 @@ header:
   overlay_image: "/images/bird_about_resize.JPG"
 ---
 
-I am a data science graduate student at Seton Hall University, and I come from a background in quantitative neuroscience.
+I am a data analyst intern at Republic Wireless and a data science graduate student at Seton Hall University. I come from a background in quantitative neuroscience.
 
 My interests include creating data pipelines and applying machine learning methods to help drive company insights. 
 
