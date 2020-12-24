@@ -608,13 +608,11 @@ plot_roc_curve(logisticRegr, X_test, y_test)
     <sklearn.metrics._plot.roc_curve.RocCurveDisplay at 0x245c7fde408>
 
 
-
-
-![png](output_17_2.png)
+![png](/images/ConvNet images/output_17_2.png)
 
 
 
-![png](output_17_3.png)
+![png](/images/ConvNet images/output_17_3.png)
 
 
 # Deep Feedforward neural network
@@ -724,7 +722,7 @@ plt.show()
 ```
 
 
-![png](output_22_0.png)
+![png](/images/ConvNet images/output_22_0.png)
 
 
 # Convolutional neural network
@@ -996,7 +994,7 @@ plt.show()
 ```
 
 
-![png](output_36_0.png)
+![png](/images/ConvNet images/output_36_0.png)
 
 
 
@@ -1012,7 +1010,7 @@ plt.show()
 ```
 
 
-![png](output_37_0.png)
+![png](/images/ConvNet images/output_37_0.png)
 
 
 ## Assess how well model performs on test set
@@ -1232,7 +1230,7 @@ plt.show()
 ```
 
 
-![png](output_50_0.png)
+![png](/images/ConvNet images/output_50_0.png)
 
 
 
@@ -1248,7 +1246,7 @@ plt.show()
 ```
 
 
-![png](output_51_0.png)
+![png](/images/ConvNet images/output_51_0.png)
 
 
 ## Assess how well model performs on test set
