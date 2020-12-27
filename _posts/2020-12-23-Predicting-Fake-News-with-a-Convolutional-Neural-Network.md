@@ -1268,3 +1268,4 @@ confusion_matrix(y_test.argmax(axis=1), y_pred.argmax(axis=1))
            [   3, 6853]], dtype=int64)
 
 
+# Please let me know if you have any questions or comments on how I can better improve these models! Thanks for looking at my work!
