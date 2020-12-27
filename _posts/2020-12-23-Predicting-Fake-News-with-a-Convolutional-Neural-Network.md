@@ -345,7 +345,7 @@ df.head()
 
 # Create baseline model - Logistic Regression with Bag of Words
 
-## For baseline model -  Create a 
+## For baseline model -  Create a document tern matrix
 
 
 ```python
@@ -615,7 +615,7 @@ plot_roc_curve(logisticRegr, X_test, y_test)
 ![png](/images/ConvNet images/output_17_3.png)
 
 
-# Deep Feedforward neural network
+# Deep Feed forward neural network
 
 
 ```python
@@ -774,7 +774,7 @@ test_list = X_test.text.tolist()
 validation_list = X_validation.text.tolist()
 ```
 
-## Traing set calculations
+## Training set calculations
 1 = Fake News and 0 = True News
 
 
