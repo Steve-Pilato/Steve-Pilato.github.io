@@ -4,7 +4,7 @@ date: 2020-12-23
 tags: [NLP, machine learning, classification, data science, Python]
 mathjax: "true"
 ---
-# Predicting Fake News with a Convolutional Neural Network
+# Data Obtained from Kaggle - https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset
 
 ```python
 #Text preprocessing
