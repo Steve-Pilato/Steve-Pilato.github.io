@@ -1,6 +1,7 @@
 ---
 title: " Using Text Mining to  Compare Trump's (2020) and Obama's (2016) State of the Union Address"
 date: 2020-08-12
+category: "NLP"
 tags: [text mining, correlation, sentiment analysis , data science, R]
 mathjax: "true"
 ---
