@@ -1,7 +1,7 @@
 ---
 title: "Calculating the Intercept and Regression Coefficient using the Matrix Inverse in Python"
 date: 2020-06-19
-category: "NLP"
+category: "stats"
 tags: [Regression, linear algebra, data science, Python]
 mathjax: "true"
 ---
