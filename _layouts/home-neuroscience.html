@@ -5,9 +5,9 @@ layout: archive
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
 {% for post in paginator.posts %}
-  {%- if post.category == "Neuroscience" -%}
+  {% if post.category == "Neuroscience" %}
   {% include archive-single.html %}
-{%- endif -%}
+{% endif %}
 {% endfor %}
 
 {% include paginator.html %}
