@@ -1,5 +1,5 @@
 ---
-layout: neuro_posts
+layout: _neuro_posts
 title: "Neuroscience"
 permalink: /neuro/
 header:
