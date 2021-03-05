@@ -185,7 +185,7 @@ obs_diff <- all_data %>%
 #Show observed difference  
 obs_diff
 ```
-
+<table cellspacing="0" class="table table-condensed"><thead><tr><th align="right" style="text-align: right; max-width: 72px; min-width: 72px; border-bottom-color: rgba(255, 255, 255, 0.18);"><div class="pagedtable-header-name">stat</div><div class="pagedtable-header-type">&lt;dbl&gt;</div></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th></tr></thead><tbody><tr class="odd"><td align="right" style="text-align: right; max-width: 72px; min-width: 72px; border-bottom-color: rgba(255, 255, 255, 0.18);">1.866667</td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td></tr></tbody></table>
 ## Create Null distribution
 
 ```R
@@ -293,6 +293,7 @@ obs_diff <- blowouts %>%
 #Show observed difference  
 obs_diff
 ```
+<table cellspacing="0" class="table table-condensed"><thead><tr><th align="right" style="text-align: right; max-width: 81px; min-width: 81px; border-bottom-color: rgba(255, 255, 255, 0.18);"><div class="pagedtable-header-name">stat</div><div class="pagedtable-header-type">&lt;dbl&gt;</div></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th></tr></thead><tbody><tr class="odd"><td align="right" style="text-align: right; max-width: 81px; min-width: 81px; border-bottom-color: rgba(255, 255, 255, 0.18);">0.1666667</td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td></tr></tbody></table>
 
 ## Create Null distribution
 
@@ -323,8 +324,9 @@ visualise(null_distrubution, bins = 10) +
 null_distrubution %>%
   get_p_value(obs_stat = obs_diff, direction = 'right')
 ```
+<table cellspacing="0" class="table table-condensed"><thead><tr><th align="right" style="text-align: right; max-width: 63px; min-width: 63px; border-bottom-color: rgba(255, 255, 255, 0.18);"><div class="pagedtable-header-name">p_value</div><div class="pagedtable-header-type">&lt;dbl&gt;</div></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th><th class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></th></tr></thead><tbody><tr class="odd"><td align="right" style="text-align: right; max-width: 63px; min-width: 63px; border-bottom-color: rgba(255, 255, 255, 0.18);">0.121</td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td><td class="pagedtable-padding-col" style="border-bottom-color: rgba(255, 255, 255, 0.18);"></td></tr></tbody></table>
 
-### As with the point differential section, we fail to reject the null hypothesis *p* \> 0.5.
+### As with the point differential section, we fail to reject the null hypothesis *p* > 0.5.
 
 # Concluding Remarks
 
