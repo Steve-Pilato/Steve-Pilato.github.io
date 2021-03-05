@@ -204,6 +204,7 @@ visualise(null_distrubution, bins = 15) +
 null_distrubution %>%
   get_p_value(obs_stat = obs_diff, direction = 'right')
 ```
+<td align="right" style="text-align: right; max-width: 63px; min-width: 63px; border-bottom-color: rgba(255, 255, 255, 0.18);">0.246</td>
 
 ### Since the p-value is greater 0.5, we fail to reject the null hypothesis that the average point differential for Super Bowl games is the same as the average point differential for NCAA championship games. Thus, there is no meaningful difference between the two means.
 
