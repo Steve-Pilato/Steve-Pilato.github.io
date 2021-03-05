@@ -13,7 +13,7 @@ mathjax: "true"
 
 ## Load libraries
 
-```{r}
+```R
 library(rvest) # For web scraping
 library(tidyverse) # For Data cleaning
 library(infer) #For Permutation testing
@@ -25,7 +25,7 @@ library(infer) #For Permutation testing
 
 ### NFL Data obtained from - https://www.pro-football-reference.com/super-bowl/
 
-```{r}
+```R
 superbowl_df <- html_session('https://www.pro-football-reference.com/super-bowl/') %>%
   read_html() %>%
   html_node(xpath = '//*[@id="super_bowls"]') %>%
