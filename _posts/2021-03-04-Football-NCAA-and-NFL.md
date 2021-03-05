@@ -53,6 +53,9 @@ superbowl_filtered <- superbowl_df %>%
 ```R
 summary(superbowl_filtered$point_differential)
 ```
+<div class="GCHYANPCA5C" style="border-color: rgba(255, 255, 255, 0.18); background-color: rgb(15, 15, 15); height: 50px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAkCAYAAAD7PHgWAAABi0lEQVR42u3XvU6DUBgG4E4u3oJjr4CBCxACowtOOhN+ll4CTiXMDnoNjRNxI65NY2PYcGtMWqCkxGo0+BNz5NMeg1ppoUdgOG/ypkPD16eH9gCtFg0NDU3zomlaW1XVw/TVSNstWGNxbPtfcIqiiKZpnriue+37/lMURahI4Rg4FmbALOIrZ1nWafohSVHYEmgCs4iuJJwa+Pab4nBhFswkuYJGmdP6V4MgeE6BRySB3TAMEcnCTKJAz/MQyZYGCoKwK4pi50edXu8MZTscXqGX17fSLQ0EEFojgHx4TKoH4hUcTyKUVwBOo1n1QAjHcfwqJADHk6AeYBYZTuPmAfFpht9aHN81C7gOrjZgHu4TVCMwDwf7oG2ff0NWClyB6/A8b49GN6jfH3whKwVi3Cye/8IxDHMgSdIx3pQHg8sPnONcVLcPLtucMS59e0eWZSs7HLC38/tqryTZzTmLS7sFwza57hL7F2Mky7L7GIfvZhoBXARQ2xgH0XV9r8RDUm5hJn0MpaGhqTHvbK0yKslszG8AAAAASUVORK5CYII=" width="40" height="36" class="GCHYANPCG5C" title="Show in New Window" style=""> <div class="GCHYANPCH4C" title="Clear Output" style=""><div class="GCHYANPCI4C"></div></div> <div class="GCHYANPCN4C" title="Expand/Collapse Output" style=""><div class="GCHYANPCO4C"></div></div> <div class="GCHYANPCH5C" style="opacity: 1;"><div><pre data-ordinal="1" style="margin-top: 0px; white-space: pre-wrap;"><span>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    4.00   10.00   12.80   14.75   45.00 
+</span></pre></div></div></div>
 
 # NCAA Data
 
@@ -120,6 +123,10 @@ head(NCAA_filtered)
 ```R
 summary(NCAA_filtered$point_differential)
 ```
+
+<pre data-ordinal="1" style="margin-top: 0px; white-space: pre-wrap;"><span>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    5.00   12.50   14.67   22.00   38.00 
+</span></pre>
 
 # Combine Superbowl and NCAA filtered data frames for data visualization
 
