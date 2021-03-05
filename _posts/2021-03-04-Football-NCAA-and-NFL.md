@@ -14,7 +14,6 @@ mathjax: "true"
 ## Load libraries
 
 ```{r}
-.libPaths('D:/R_3.6.1_libraries') #change library path
 library(rvest) # For web scraping
 library(tidyverse) # For Data cleaning
 library(infer) #For Permutation testing
