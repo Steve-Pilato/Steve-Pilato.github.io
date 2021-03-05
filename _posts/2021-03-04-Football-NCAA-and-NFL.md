@@ -154,6 +154,10 @@ ggplot(data = all_data, aes(x = organization, y = point_differential, color = or
 
 ```
 
+![png](https://github.com/Steve-Pilato/Steve-Pilato.github.io/blob/master/images/blowout_images/blowouts_box.png)
+
+
+
 ### From the above figure, we can see that NFL Super Bowl games have a slightly lower median compared to the NCAA games. It is important to realize that this does not mean that there is statistically significant difference between the two groups. In order to determine if this difference is meaningful we will need to perform some inferential statistics.
 
 ### We can use permutation testing to see if there is a meaningful difference between the means of the NFL and NCAA point differentials. Briefly, permutation testing allows us to create a null distribution of a statistic of interest (In this case the difference in average point differentials) by shuffling the labels (NCAA and NFL) belonging to the point differentials. We then can generate the mean difference from the resulting shuffle and do this repeatedly.
@@ -189,6 +193,7 @@ visualise(null_distrubution, bins = 15) +
   shade_p_value(obs_stat = obs_diff, direction = "right")
 
 ```
+![png](https://github.com/Steve-Pilato/Steve-Pilato.github.io/blob/master/images/blowout_images/blowouts_point_differential_null.png)
 
 ## Calculate p-value
 
@@ -296,6 +301,7 @@ visualise(null_distrubution, bins = 10) +
   shade_p_value(obs_stat = obs_diff, direction = "right")
 
 ```
+![png](https://github.com/Steve-Pilato/Steve-Pilato.github.io/blob/master/images/blowout_images/blowouts_differentce_blowouts_null.png)
 
 ## Calculate p-value
 
