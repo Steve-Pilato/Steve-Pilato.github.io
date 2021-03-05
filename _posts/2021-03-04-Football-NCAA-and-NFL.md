@@ -153,7 +153,7 @@ ggplot(data = all_data, aes(x = organization, y = point_differential, color = or
 
 ```
 
-![png](https://github.com/Steve-Pilato/Steve-Pilato.github.io/blob/master/images/blowout_images/blowouts_box.png)
+![png](/images/blowout_images/blowouts_box.png)
 
 
 
@@ -192,7 +192,7 @@ visualise(null_distrubution, bins = 15) +
   shade_p_value(obs_stat = obs_diff, direction = "right")
 
 ```
-![png](https://github.com/Steve-Pilato/Steve-Pilato.github.io/blob/master/images/blowout_images/blowouts_point_differential_null.png)
+![png](/images/blowout_images/blowouts_differentce_blowouts_null.png)
 
 ## Calculate p-value
 
@@ -300,7 +300,7 @@ visualise(null_distrubution, bins = 10) +
   shade_p_value(obs_stat = obs_diff, direction = "right")
 
 ```
-![png](https://github.com/Steve-Pilato/Steve-Pilato.github.io/blob/master/images/blowout_images/blowouts_differentce_blowouts_null.png)
+![png](/images/blowout_images/blowouts_point_differential_null.png)
 
 ## Calculate p-value
 
