@@ -40,7 +40,7 @@ head(superbowl_df)
 
 ### Please note that I will only be looking at data from 1990 to 2019
 
-```{r}
+```R
 superbowl_filtered <- superbowl_df %>%
   mutate(year = as.integer(str_extract_all(Date, "[0-9]{4}")), point_differential =  winning_team - losing_team) %>%
   filter(year >= 1990 & year <= 2019) %>%
@@ -50,7 +50,7 @@ superbowl_filtered <- superbowl_df %>%
 
 ## Calculate descriptive statistics
 
-```{r}
+```R
 summary(superbowl_filtered$point_differential)
 ```
 
@@ -59,7 +59,7 @@ summary(superbowl_filtered$point_differential)
 ## Webscrape NCAA football National championship data
 
 ### NCAA Data obtained from - http://championshiphistory.com/ncaafootball.php
-```{r}
+```R
 NCAA_df <- html_session('http://championshiphistory.com/ncaafootball.php') %>%
   read_html() %>%
   html_node(xpath = '//*[@id="tablesorter-demo"]') %>%
@@ -71,7 +71,7 @@ head(NCAA_df)
 
 ## Parse out championship scores for NCAA
 
-```{r}
+```R
 # Calculate number of rows in NCAA data frame
 num_games <- nrow(NCAA_df)
 
@@ -106,7 +106,7 @@ NCAA_scores <- data.frame(year = unlist(year), winning_score = as.integer(unlist
 
 ## Calculate NCAA point differentials
 
-```{r}
+```R
 NCAA_filtered <- NCAA_scores %>%
   filter(year >= 1990 & year <= 2019) %>%
   mutate(point_differential =  winning_score - losing_score) %>%
@@ -117,13 +117,13 @@ head(NCAA_filtered)
 
 ## Calculate descriptive statistics
 
-```{r}
+```R
 summary(NCAA_filtered$point_differential)
 ```
 
 # Combine Superbowl and NCAA filtered data frames for data visualization
 
-```{r}
+```R
 # Add Super Bowl Label
 superbowl_filtered$organization <- "NFL"
 
@@ -137,7 +137,7 @@ head(all_data)
 
 ## Graph data
 
-```{r}
+```R
 # Create boxplot
 ggplot(data = all_data, aes(x = organization, y = point_differential, color = organization)) +
   geom_boxplot(lwd = 1) +
@@ -168,7 +168,7 @@ ggplot(data = all_data, aes(x = organization, y = point_differential, color = or
 
 ## Calculate observed mean difference in point differential between the NFL and NCAA games
 
-```{r}
+```R
 obs_diff <- all_data %>%
   specify(point_differential ~ organization) %>%
   calculate(stat = "diff in means", order = c("NCAA", "NFL"))
@@ -179,7 +179,7 @@ obs_diff
 
 ## Create Null distribution
 
-```{r}
+```R
 null_distrubution <- all_data %>%
   specify(point_differential ~ organization) %>%
   hypothesize(null = "independence") %>%
@@ -189,7 +189,7 @@ null_distrubution <- all_data %>%
 
 ## Visualize the null distribution and calculate p-value
 
-```{r}
+```R
 #visualize null distribution
 visualise(null_distrubution, bins = 15) +
   shade_p_value(obs_stat = obs_diff, direction = "right")
@@ -199,7 +199,7 @@ visualise(null_distrubution, bins = 15) +
 
 ## Calculate p-value
 
-```{r}
+```R
 #Calculate p-value
 null_distrubution %>%
   get_p_value(obs_stat = obs_diff, direction = 'right')
@@ -216,7 +216,7 @@ null_distrubution %>%
 
 ## Calculate the number of blowout games
 
-```{r}
+```R
 blowouts <- all_data %>%
   mutate(game_status = if_else(point_differential >= 20, true = "blowout", false = "non-blowout")) %>%
   group_by(organization) %>%
@@ -227,7 +227,7 @@ blowouts <- all_data %>%
 
 ## Visualize data
 
-```{r}
+```R
 ggplot(data = blowouts, aes(x = organization, y = n, fill = game_status)) +
   geom_col(color = 'black') +
     ggtitle("Number of Games that were blowout and non-blowout games") +
@@ -249,7 +249,7 @@ ggplot(data = blowouts, aes(x = organization, y = n, fill = game_status)) +
 
 ## Calculate difference in proportion of blowout game between NFL and NCAA Games
 
-```{r}
+```R
 blowouts %>%
   group_by(organization) %>%
   mutate(group_total = sum(n)) %>%
@@ -270,7 +270,7 @@ blowouts %>%
 
 ## Calculate the observed difference in proportion of championship blowout games between NCAA and NFL
 
-```{r}
+```R
 #create new df
 blowouts <- all_data %>%
   mutate(game_status = if_else(point_differential >= 20, true = "blowout", false = "non-blowout"))
@@ -296,7 +296,7 @@ null_distrubution <- blowouts %>%
 
 ## Visualize the null distribution and calculate p-value
 
-```{r}
+```R
 set.seed(1234)
 
 #visualize null distribution
@@ -308,7 +308,7 @@ visualise(null_distrubution, bins = 10) +
 
 ## Calculate p-value
 
-```{r}
+```R
 #Calculate p-value
 null_distrubution %>%
   get_p_value(obs_stat = obs_diff, direction = 'right')
