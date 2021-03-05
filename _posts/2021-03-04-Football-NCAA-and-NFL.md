@@ -23,6 +23,8 @@ library(infer) #For Permutation testing
 
 ## Webscrape Super Bowl data
 
+### NFL Data obtained from - https://www.pro-football-reference.com/super-bowl/
+
 ```{r}
 superbowl_df <- html_session('https://www.pro-football-reference.com/super-bowl/') %>%
   read_html() %>%
@@ -56,6 +58,7 @@ summary(superbowl_filtered$point_differential)
 
 ## Webscrape NCAA football National championship data
 
+### NCAA Data obtained from - http://championshiphistory.com/ncaafootball.php
 ```{r}
 NCAA_df <- html_session('http://championshiphistory.com/ncaafootball.php') %>%
   read_html() %>%
