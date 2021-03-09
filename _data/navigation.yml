@@ -4,8 +4,6 @@ main:
     url: /about/
   - title: "Projects/Blog"
     url: /data-wrangling/
-  - title: "Neuroscience"  
-    url: /neuro/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
