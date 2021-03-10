@@ -252,6 +252,8 @@ ggplot(data = blowouts, aes(x = organization, y = n, fill = game_status)) +
         axis.title = element_text(color = 'black', face = 'bold'))
 ```
 
+![png](/images/blowout_images/proportions.png)
+
 ### Based on the above figure, there seems to be a larger proportion of NCAA championship games that ended up with a blowout game.
 
 ### I thought it would be a good idea to calculate the actual percentage of games that were blowouts for both organizations.
