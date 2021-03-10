@@ -21,7 +21,7 @@ library(infer) #For Permutation testing
 
 # NFL Data
 
-## Webscrape Super Bowl data
+## Web scrape Super Bowl data
 
 ### NFL Data obtained from - https://www.pro-football-reference.com/super-bowl/
 
@@ -60,7 +60,7 @@ summary(superbowl_filtered$point_differential)
 
 # NCAA Data
 
-## Webscrape NCAA football National championship data
+## Web scrape NCAA football National championship data
 
 ### NCAA Data obtained from - http://championshiphistory.com/ncaafootball.php
 ```R
