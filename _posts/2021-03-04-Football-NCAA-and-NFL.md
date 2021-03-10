@@ -278,7 +278,7 @@ blowouts %>%
 
 ### Again, the question is whether or not this is statistically meaningful.
 
-# Permutation Testing: Is there a meaningful difference in the Proportion of Championship blowout games Between NCAA and NFL?
+# Permutation Testing: Is there a meaningful difference in the proportion of championship blowout games Between NCAA and NFL?
 
 ## Calculate the observed difference in proportion of championship blowout games between NCAA and NFL
 
