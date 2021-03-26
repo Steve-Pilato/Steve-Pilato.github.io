@@ -345,7 +345,7 @@ df.head()
 
 # Create baseline model - Logistic Regression with Bag of Words
 
-## For baseline model -  Create a document tern matrix
+## For baseline model -  Create a document term matrix
 
 
 ```python
