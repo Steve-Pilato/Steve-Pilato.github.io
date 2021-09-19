@@ -1,6 +1,7 @@
 ---
 title: "Creating a United States CO2 Emissions Streamlit Application"
 date: 2021-09-18
+category: data visualization
 tags: [streamlit, data science, Python]
 mathjax: "true"
 ---
