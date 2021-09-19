@@ -13,7 +13,7 @@ mathjax: "true"
 
 ### The first thing I am going to do is import the necessary libraries  
 
-```Python
+```python
 import pandas as pd
 import folium as folium
 from streamlit_folium import folium_static
@@ -25,7 +25,7 @@ import streamlit as st
 
 ### I am going to start my application by importing the data, creating a title, and adding sidebar that will allow users to choose a year of interest. 
 
-```Python
+```python
 #Import state data 
 df = pd.read_csv("US State CO2 Emissions.csv")
 
@@ -50,7 +50,7 @@ selector_year = st.sidebar.selectbox(label="What Year Do You Want to Look at?", 
 ### Note that I placed the select box on the sidebar
 
 ### Now I am going to focus on the US map functionaility 
-```Python
+```python
 #Filter by year
 df_filt = df[df["Year"] == selector_year]
 
@@ -76,7 +76,7 @@ folium_static(m)
 
 ### One of the issues with the state of this map, is that it does not tell the viewer what the CO2 emissions for a state are when hovering the cursor over said state. To over come this, I am going  to incorporate interactive markers that display these data. 
 
-```Python
+```python
 #Add co2 markers
 for i in range(0,len(df_filt)):
    folium.Marker(
@@ -94,7 +94,7 @@ folium_static(m)
 
 ### The last visualization I want to incorporate in this application is an interactive bar graph that displays the top 10 states by CO2 emissions. To do this I will use the plotly.express library. 
 
-```Python
+```python
 #Bar chart title
 st.markdown("## <center> Top 10 States By CO2 Emissions For The Year {} </center>".format(str(selector_year)), unsafe_allow_html=True)
 
