@@ -11,8 +11,6 @@ mathjax: "true"
 
 ## The data for this project was obtained from https://www.eia.gov/environment/emissions/state/
 
-<br></br>
-
 ### The first thing I am going to do is import the necessary libraries  
 
 ```Python
