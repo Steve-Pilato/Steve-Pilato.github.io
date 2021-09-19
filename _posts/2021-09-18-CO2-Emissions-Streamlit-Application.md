@@ -25,8 +25,6 @@ import streamlit as st
 
 ### Folium is a package that is used for visualizing geospatial data. We can use this package with steamlit to display maps for this application. You can see also see that I am importing a package entitled streamlit_folium. This will be used to display the folium map in the streamlit application. plotly.express will be used for creating an interactive bar graph.  
 
-<br></br>
-
 ### I am going to start my application by importing the data, creating a title, and adding sidebar that will allow users to choose a year of interest. 
 
 ```Python
@@ -53,8 +51,6 @@ selector_year = st.sidebar.selectbox(label="What Year Do You Want to Look at?", 
 
 ### Note that I placed the select box on the sidebar
 
-<br></br>
-
 ### Now I am going to focus on the US map functionaility 
 ```Python
 #Filter by year
@@ -80,8 +76,6 @@ folium_static(m)
 
 ### A few things on the above code. The line of code "df_filt = df[df["Year"] == selector_year]" allows for users to input a year of interest. This will tell streamlit what year to display in the application. The input argument "highlight=True" will display boarders around US states when a mouse is hovering over a state.
 
-<br></br>
-
 ### One of the issues with the state of this map, is that it does not tell the viewer what the CO2 emissions for a state are when hovering the cursor over said state. To over come this, I am going  to incorporate interactive markers that display these data. 
 
 ```Python
@@ -99,8 +93,6 @@ folium_static(m)
 ![Alt Text](/images/CO2 emissions/co2_emissions_3rd.gif)
 
 ### This visualization gives a more interactive experience for users
-
-<br></br>
 
 ### The last visualization I want to incorporate in this application is an interactive bar graph that displays the top 10 states by CO2 emissions. To do this I will use the plotly.express library. 
 
