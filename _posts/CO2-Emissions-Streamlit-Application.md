@@ -48,7 +48,7 @@ selector_year = st.sidebar.selectbox(label="What Year Do You Want to Look at?", 
 ```
 ### Let's take a look and see how this displays in streamlit
 
-![Alt Text](co2_emissions_start.gif)
+![Alt Text](/images/CO2 emissions/co2_emissions_start.gif)
 
 ### Note that I placed the select box on the sidebar
 
@@ -75,7 +75,7 @@ key_on= 'feature.id').add_to(m)
 folium_static(m)
 ```
 
-![Alt Text](co2_emissions_2nd.gif)
+![Alt Text](/images/CO2 emissions/co2_emissions_2nd.gif)
 
 ### A few things on the above code. The line of code "df_filt = df[df["Year"] == selector_year]" allows for users to input a year of interest. This will tell streamlit what year to display in the application. The input argument "highlight=True" will display boarders around US states when a mouse is hovering over a state.
 
@@ -95,7 +95,7 @@ for i in range(0,len(df_filt)):
 folium_static(m)
 ```
 
-![Alt Text](co2_emissions_3rd.gif)
+![Alt Text](/images/CO2 emissions/co2_emissions_3rd.gif)
 
 ### This visualization gives a more interactive experience for users
 
@@ -112,7 +112,7 @@ ax = ps.bar(df_filt.sort_values("CO2", ascending= False)[0:10], x = 'State', y =
 st.plotly_chart(ax)
 ```
 
-![Alt Text](co2_emissions.gif)
+![Alt Text](/images/CO2 emissions/co2_emissions.gif)
 
 
 ### There you have it! A basic CO2 emissions application. Please email me if you have any questions. Happy coding!
