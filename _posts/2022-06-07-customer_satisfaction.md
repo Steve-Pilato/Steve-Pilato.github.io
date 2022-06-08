@@ -1,5 +1,5 @@
 ---
-title: "Predicting Customer Airline Satisfaction Scores"
+title: "Predicting Airline Customer Satisfaction Scores"
 author: "Steven Pilato"
 date: '2022-06-04'
 output: html_document
