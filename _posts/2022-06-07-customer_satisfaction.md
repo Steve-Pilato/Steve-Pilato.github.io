@@ -153,8 +153,6 @@ multi_plot <- function(x, y){
       ggplot(aes(x =!!x_name , y =`Proportion`, fill = satisfaction)) +
       geom_col(position = "dodge", width = 0.5) +
       ggtitle(paste(x, '- Satisfaction'))
-    
-    
   }
 }
 
@@ -185,11 +183,9 @@ map2(variable_list, pred_types, multi_plot) %>%
 df_tidy <- df_data
 colnames(df_tidy) <- str_replace_all(colnames(df_tidy), " ", "")
 
-
 #Create train and test set
 df_split <- df_tidy %>% 
   initial_split(prop = 0.7, strata = satisfaction)
-
 
 #Extract Training set
 df_train_tidy <- df_split %>%
@@ -218,7 +214,6 @@ cs_model <- rand_forest(trees = 500) %>%
 cs_model <- workflow() %>%
   add_model(cs_model)%>%
   add_recipe(customer_rec)
-
 ```
 
 
@@ -226,13 +221,10 @@ cs_model <- workflow() %>%
 
 # Fit model And assess feature importance 
 ```R
-
 vip_res <- rand_forest(trees = 500) %>%
   set_mode("classification") %>%
   set_engine("ranger", importance = "impurity") %>%
   fit(satisfaction~., data =  customer_rec %>% prep %>% juice())
-
-
 vip(vip_res)
 
 ```
@@ -275,8 +267,6 @@ knn_spec <-
 random_forest <- rand_forest(trees = tune(), mtry = tune(), min_n = tune())  %>%
   set_mode("classification") %>%
   set_engine("ranger")
-
-
 ```
 
 
@@ -287,7 +277,6 @@ wf <- workflow_set(
       models = list(lr = logistic, knn = knn_spec, 
                     rf = random_forest)
    )
-
 ```
 
 
@@ -313,8 +302,6 @@ grid_results <-
       grid = 5,
       control = grid_ctrl
    )
-
-
 ```
 
 
@@ -334,7 +321,6 @@ autoplot(
   geom_hline(yintercept = 0.5, lty = 2, lwd = 0.8, color = 'red') +
   geom_text(aes(1,0.5,label = 'Chance Pefromance for Binary Classification', vjust = -1, hjust = -.01)) +
   ggtitle("Cross Validation - Model Performance")
-
 ```
 
 ![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/cross validation model perfom.png)
@@ -357,7 +343,6 @@ rf_test_results <-
    extract_workflow("normalized_rf") %>% 
    finalize_workflow(best_results) %>% 
    last_fit(df_split)
-
 ```
 
 
@@ -378,7 +363,6 @@ cm <- confusion_matrix(targets = obs$satisfaction, predictions = preds)
 
 #Plot confusion Matrix
 plot_confusion_matrix(cm$`Confusion Matrix`[[1]])
-
 ```
 
 
