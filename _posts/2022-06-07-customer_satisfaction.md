@@ -313,9 +313,9 @@ grid_results <-
 ```R
 autoplot(
    grid_results,
-   rank_metric = "roc_auc",  # <- how to order models
-   metric = "roc_auc",       # <- which metric to visualize
-   select_best = TRUE     # <- one point per workflow
+   rank_metric = "roc_auc", 
+   metric = "roc_auc",      
+   select_best = TRUE     
 ) + 
   geom_text(aes(y = mean - .01, label = c('random forest', 'knn', 'linear regression')), angle = 90, hjust = 1) +
   ylim(.5, 1) +
