@@ -36,10 +36,6 @@ df_data <- read_csv("dataset.csv") %>%
 
 
 # Exploratory Data Analysis 
-```R
-head(df_data)
-```
-
 
 ## Assess if there is a class imbalance
 ```R
@@ -250,7 +246,6 @@ vip(vip_res)
 ```R
 set.seed(1001)
 sat_folds <- vfold_cv(df_train_tidy, v = 5, strata = satisfaction)
-sat_folds
 ```
 
 
@@ -292,9 +287,6 @@ wf <- workflow_set(
       models = list(lr = logistic, knn = knn_spec, 
                     rf = random_forest)
    )
-
-wf
-
 
 ```
 
