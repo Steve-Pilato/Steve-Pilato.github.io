@@ -404,7 +404,7 @@ rf_test_results$.predictions[[1]] %>%
 
 ### Lastly, here is the ROC for the “neutral or dissatisfied” class.
 
-![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/confusion matrix.png)
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/roc.png)
 
 ## And that’s it! This model still needs fine tuning. There was more exploration that could have been done with the hyperparameter tuning. There are also other models I would like to try out to see if I might be able to achieve better performance. Thank you for reading and please feel free to message me if you have any questions or comments! 
 
