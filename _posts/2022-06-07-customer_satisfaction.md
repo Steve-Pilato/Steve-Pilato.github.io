@@ -99,6 +99,9 @@ df_data %>%
   ggtitle("Age by Satisfaction Type")
 ```
 
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/age hist.png)
+
+
 ### There seems to be little separation between the two distributions 
 
 
@@ -173,7 +176,7 @@ map2(variable_list, pred_types, multi_plot) %>%
     widths = 150)
 ```
 
-![png](D:/Data_projects/Airline Passanger Satisfaction With Tidymodels/all_predictors.png)
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/all_predictors.png)
 
 
 ### When looking at the above figures, it seems customer type, type of travel, class, inflight Wi-Fi rating, ease of online booking, food and drink, online boarding, check-in service, inflight service, and cleanliness may be useful features for predicting customer satisfaction scores. One way we can check this is by using a machine learning algorithm (i.e. random forest) to predict customer satisfaction with the above predictors and have it report to us which feature were most informative. But first we need to do some data preprocessing...
@@ -237,6 +240,8 @@ vip_res <- rand_forest(trees = 500) %>%
 vip(vip_res)
 
 ```
+
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/important features.png)
 
 ### As mentioned previously, we can use models to assess feature importance. Using the above model, we can see that online boarding, in-flight Wi-Fi, type of travel, flight entertainment, leg room, customer type, ease of online booking, and flight distance were important predictors. As a result, I am going to  and use only these predictors for the models I train going forward. 
 
