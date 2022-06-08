@@ -10,8 +10,10 @@ output: html_document
 
 
 
-#### The primary goal here is to try classifying whether or not an airline customer is “satisfied “or “neutral or dissatisfied”. Since there are only two possible outcomes for customer satisfaction, this is a binary classification problem. Here is the layout for this post.
+#### The primary goal here is to try classifying whether or not an airline customer is “satisfied “or “neutral or dissatisfied”. Since there are only two possible outcomes for customer satisfaction, this is a binary classification problem. 
 
+
+### Here is the layout of this post.
 
 •	Exploratory Data Analysis
 
