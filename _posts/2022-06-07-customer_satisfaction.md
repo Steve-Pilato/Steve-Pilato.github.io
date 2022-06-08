@@ -103,7 +103,7 @@ df_data %>%
 ### There seems to be little separation between the two distributions 
 
 
-### Now that we have looked at some predictors, we need a more efficient way to look at all the predictors and their relation to the dependent variable of interest, customer satisfaction. To do this I will make a function the plots categorical and ordinal variables with bar charts and continuous variables with histograms.
+### Now that we have looked at some predictors, we need a more efficient way to look at all the predictors and their relation to the dependent variable of interest, customer satisfaction. To do this I will make a function that plots categorical and ordinal variables with bar charts and continuous variables with histograms.
 
 
 ```R
