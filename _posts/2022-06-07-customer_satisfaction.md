@@ -22,7 +22,7 @@ output: html_document
 
 ### Load in libraries
 
-```{r setup, include=FALSE}
+```R
 library(tidyverse)
 library(tidymodels)
 library(GGally)
@@ -36,27 +36,24 @@ df_data <- read_csv("dataset.csv") %>%
 
 
 # Exploratory Data Analysis 
-```{r}
+```R
 head(df_data)
 ```
 
 
 ## Assess if there is a class imbalance
-```{r}
+```R
 df_data %>%
   group_by(satisfaction) %>%
   count() %>%
   ggplot(aes(x = satisfaction, y =n)) +
     geom_col(fill = 'royalblue', position = 'dodge', width = 0.5) +
   ggtitle("Number of Records with Specific Satisfaction Label")
-
-
-
 ```
 ### This actually does not look to bad. If there were a larger disparity, I might try to up/down sample here. However, since the imbalance seems ok, I am just going to move on to looking at the predictors.  
 
 ### Satisfaction by Customer Type
-```{r}
+```R
 df_data %>%
   select(`Customer Type`, satisfaction) %>%
   group_by(`Customer Type`, satisfaction) %>%
@@ -64,15 +61,13 @@ df_data %>%
   ggplot(aes(x = satisfaction, y =`Satisfaction Type Count`, fill = `Customer Type`)) +
     geom_col(position = "dodge") +
   ggtitle("Satisfaction by Customer Type")
-
-
 ```
 
 
 ### When looking at the above data, it seems strange that loyal customers occur more frequently for both “neutral or dissatisfied” and “satisfied”. I would expect loyal customers to rate their experience with the airline as “satisfied” as opposed to “neutral or dissatisfied”. However, looking more closely, it seems as though there are just more loyal customer overall compared to disloyal. This means we need to calculate the proportion of disloyal and loyal customers who rated their trips as “neutral or dissatisfied” or “satisfied”.
 
 
-```{r}
+```R
 df_data %>%
   select(`Customer Type`, satisfaction) %>%
   group_by(`Customer Type`, satisfaction) %>%
@@ -82,8 +77,6 @@ df_data %>%
   ggplot(aes(x = satisfaction, y =`Prop Satisfaction Type Count`, fill = `Customer Type`)) +
     geom_col(position = "dodge") +
   ggtitle("Satisfaction by Customer Type (Proportion)")
-
-
 ```
 
 ### As we can see above, this makes more sense when compared to the previous figure. There is a higher proportion of disloyal customers who rated their experience with an airline as “neutral or dissatisfied” compared to “satisfied” 
@@ -91,14 +84,12 @@ df_data %>%
 
 ### Next, I want to look at how continuous features compare when discretized by satisfaction score. For this, I will use histograms. Here is an example using customer age as a predictor. 
 
-```{r}
+```R
 df_data %>%
   select(Age, satisfaction) %>%
   ggplot(aes(x = Age, fill = satisfaction)) +
     geom_histogram(position = 'identity', alpha = 0.3) +
   ggtitle("Age by Satisfaction Type")
-
-
 ```
 
 ### There seems to be little separation between the two distributions 
@@ -107,7 +98,7 @@ df_data %>%
 ### Now that we have looked at some predictors, we need a more efficient way to look at all the predictors and their relation to the dependent variable of interest, customer satisfaction. To do this I will make a function the plots categorical and ordinal variables with bar charts and continuous variables with histograms.
 
 
-```{r, include=F}
+```R
 
 multi_plot <- function(x, y){
   
@@ -173,9 +164,6 @@ map2(variable_list, pred_types, multi_plot) %>%
     ncol = 4,
     heights = 150,
     widths = 150)
-
-
-
 ```
 
 ![png](D:/Data_projects/Airline Passanger Satisfaction With Tidymodels/all_predictors.png)
@@ -186,7 +174,7 @@ map2(variable_list, pred_types, multi_plot) %>%
 # Feature Selection and Model Training 
 
 ## Tidy and split data into training and testing data
-```{r}
+```R
 # Fix column name for training and test data
 df_tidy <- df_data
 colnames(df_tidy) <- str_replace_all(colnames(df_tidy), " ", "")
@@ -200,14 +188,12 @@ df_split <- df_tidy %>%
 #Extract Training set
 df_train_tidy <- df_split %>%
   training()
-
-
 ```
 
 
 
 ## Create model recipe
-```{r}
+```R
 customer_rec <- recipe(satisfaction~., data = df_train_tidy) %>%
   step_dummy(all_nominal_predictors()) %>%
   step_normalize(all_predictors())
@@ -218,7 +204,7 @@ customer_rec <- recipe(satisfaction~., data = df_train_tidy) %>%
 
 ## Workflow for random forest model that displays predictor importance 
 
-```{r}
+```R
 cs_model <- rand_forest(trees = 500) %>%
   set_mode("classification") %>%
   set_engine("ranger", importance = "impurity") 
@@ -233,7 +219,7 @@ cs_model <- workflow() %>%
 
 
 # Fit model And assess feature importance 
-```{r}
+```R
 
 vip_res <- rand_forest(trees = 500) %>%
   set_mode("classification") %>%
@@ -249,7 +235,7 @@ vip(vip_res)
 
 
 ## k-fold Cross Validation and Model Training
-```{r}
+```R
 set.seed(1001)
 sat_folds <- vfold_cv(df_train_tidy, v = 5, strata = satisfaction)
 sat_folds
@@ -257,7 +243,7 @@ sat_folds
 
 
 ## Define models and perform hyperparameter tuning
-```{r}
+```R
 # New model rec
 customer_rec2 <- recipe(satisfaction~ Onlineboarding + Inflightwifiservice + TypeofTravel + Class + Seatcomfort + Legroomservice +
                         EaseofOnlinebooking + CustomerType + FlightDistance, data = df_train_tidy) %>%
@@ -288,7 +274,7 @@ random_forest <- rand_forest(trees = tune(), mtry = tune(), min_n = tune())  %>%
 
 
 ## Setup workflow
-```{r}
+```R
 wf <- workflow_set(
       preproc = list(normalized = customer_rec2), 
       models = list(lr = logistic, knn = knn_spec, 
@@ -304,7 +290,7 @@ wf
 
 
 ## Modle Tuning
-```{r}
+```R
 
 grid_ctrl <-
    control_grid(
@@ -331,7 +317,7 @@ grid_results <-
 
 ## Plot model cross validation performance
 
-```{r}
+```R
 autoplot(
    grid_results,
    rank_metric = "roc_auc",  # <- how to order models
@@ -351,7 +337,7 @@ autoplot(
 
 
 # Select Best model and plot confusion matrix
-```{r}
+```R
 best_results <- 
    grid_results %>% 
    extract_workflow_set_result("normalized_rf") %>% 
@@ -372,7 +358,7 @@ rf_test_results <-
 # Testing Results
 
 ## Confusion Matrix
-```{r}
+```R
 collect_metrics(rf_test_results)
 
 #Extract models predictions
@@ -387,8 +373,6 @@ cm <- confusion_matrix(targets = obs$satisfaction, predictions = preds)
 #Plot confusion Matrix
 plot_confusion_matrix(cm$`Confusion Matrix`[[1]])
 
-
-
 ```
 
 
@@ -398,13 +382,10 @@ plot_confusion_matrix(cm$`Confusion Matrix`[[1]])
 
 
 ## ROC Curve
-```{r}
+```R
 rf_test_results$.predictions[[1]] %>%
   roc_curve(satisfaction, `.pred_neutral or dissatisfied`) %>%
   autoplot(lwd = 0.8)
-
-
-
 ```
 
 ### Lastly, here is the ROC for the “neutral or dissatisfied” class.
