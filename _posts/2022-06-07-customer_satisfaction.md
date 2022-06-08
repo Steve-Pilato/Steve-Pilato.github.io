@@ -50,7 +50,7 @@ df_data %>%
     geom_col(fill = 'royalblue', position = 'dodge', width = 0.5) +
   ggtitle("Number of Records with Specific Satisfaction Label")
 ```
-### This actually does not look to bad. If there were a larger disparity, I might try to up/down sample here. However, since the imbalance seems ok, I am just going to move on to looking at the predictors.  
+### This actually does not look too bad. If there were a larger disparity, I might try to up/down sample here. However, since the imbalance seems ok, I am just going to move on to looking at the predictors.  
 
 ### Satisfaction by Customer Type
 ```R
@@ -391,6 +391,6 @@ rf_test_results$.predictions[[1]] %>%
 ### Lastly, here is the ROC for the “neutral or dissatisfied” class.
 
 
-## And that’s it! This model still needs find tuning. There was more exploration that could have been done with the hyperparameter tuning. There are also other models I would like to try out to see if I might be able to achieve better performance. Thank you for reading and please feel free to message me if you have any questions or comments! 
+## And that’s it! This model still needs fine tuning. There was more exploration that could have been done with the hyperparameter tuning. There are also other models I would like to try out to see if I might be able to achieve better performance. Thank you for reading and please feel free to message me if you have any questions or comments! 
 
 
