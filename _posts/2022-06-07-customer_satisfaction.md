@@ -6,7 +6,7 @@ output: html_document
 ---
 
 
-#### Hey reader! Thanks for taking a look at this post. I wanted to try and practice using R's tidymodels package, so I decided to try it out on an airline satisfaction dataset (see https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction).
+#### Hey reader! Thanks for taking a look at this post. I wanted to test out R's tidymodels package, so I decided to try it out on an airline satisfaction dataset (see https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction).
 
 
 
