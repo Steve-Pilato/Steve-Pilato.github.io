@@ -231,7 +231,7 @@ vip(vip_res)
 
 ![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/important features.png)
 
-### As mentioned previously, we can use models to assess feature importance. Using the above model, we can see that online boarding, in-flight Wi-Fi, type of travel, flight entertainment, leg room, customer type, ease of online booking, and flight distance were important predictors. As a result, I am going to  and use only these predictors for the models I train going forward. 
+### As mentioned previously, we can use models to assess feature importance. Using the above model, we can see that online boarding, in-flight Wi-Fi, type of travel, flight entertainment, leg room, customer type, ease of online booking, and flight distance were important predictors. As a result, I am going to use only these predictors for the models I train going forward. 
 
 
 ## k-fold Cross Validation and Model Training
@@ -282,7 +282,7 @@ wf <- workflow_set(
 
 
 
-## Modle Tuning
+## Model tuning
 ```R
 
 grid_ctrl <-
@@ -328,7 +328,9 @@ autoplot(
 ### Based on the above figure, we can see that all three of the models had an area under the ROC above 0.9. However, the best model was the random forest. Since the random forest performed best, that is the model I will use.
 
 
-# Select Best model and plot confusion matrix
+# Testing Results
+
+## Select Best model and plot confusion matrix
 ```R
 best_results <- 
    grid_results %>% 
@@ -346,7 +348,7 @@ rf_test_results <-
 ```
 
 
-# Testing Results
+
 
 ## Confusion Matrix
 ```R
@@ -368,7 +370,7 @@ plot_confusion_matrix(cm$`Confusion Matrix`[[1]])
 
 ![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/confusion matrix.png)
 
-### The confusion matrix shows us that the model was able to predict the 94.9% of the “satisfied” labels correctly and 93.6%  of the “neutral or dissatisfied” labels correctly on the testing set. 
+### The confusion matrix shows us that the model was able to predict 94.9% of the “satisfied” labels correctly and 93.6%  of the “neutral or dissatisfied” labels correctly on the testing set. 
 
 
 ## ROC Curve
