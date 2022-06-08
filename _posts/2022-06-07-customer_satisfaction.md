@@ -50,6 +50,8 @@ df_data %>%
     geom_col(fill = 'royalblue', position = 'dodge', width = 0.5) +
   ggtitle("Number of Records with Specific Satisfaction Label")
 ```
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airlines/class imbalance.png)
+
 ### This actually does not look too bad. If there were a larger disparity, I might try to up/down sample here. However, since the imbalance seems ok, I am just going to move on to looking at the predictors.  
 
 ### Satisfaction by Customer Type
@@ -62,6 +64,8 @@ df_data %>%
     geom_col(position = "dodge") +
   ggtitle("Satisfaction by Customer Type")
 ```
+
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airlines/customer sat v1.png)
 
 
 ### When looking at the above data, it seems strange that loyal customers occur more frequently for both “neutral or dissatisfied” and “satisfied”. I would expect loyal customers to rate their experience with the airline as “satisfied” as opposed to “neutral or dissatisfied”. However, looking more closely, it seems as though there are just more loyal customer overall compared to disloyal. This means we need to calculate the proportion of disloyal and loyal customers who rated their trips as “neutral or dissatisfied” or “satisfied”.
@@ -78,6 +82,9 @@ df_data %>%
     geom_col(position = "dodge") +
   ggtitle("Satisfaction by Customer Type (Proportion)")
 ```
+
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airlines/customer sat v2.png)
+
 
 ### As we can see above, this makes more sense when compared to the previous figure. There is a higher proportion of disloyal customers who rated their experience with an airline as “neutral or dissatisfied” compared to “satisfied” 
 
