@@ -83,7 +83,7 @@ df_data %>%
   ggtitle("Satisfaction by Customer Type (Proportion)")
 ```
 
-![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airlines/customer sat v2.png)
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/customer sat v2.png)
 
 
 ### As we can see above, this makes more sense when compared to the previous figure. There is a higher proportion of disloyal customers who rated their experience with an airline as “neutral or dissatisfied” compared to “satisfied” 
@@ -345,6 +345,8 @@ autoplot(
 
 ```
 
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/cross validation model perfom.png)
+
 ### Based on the above figure, we can see that all three of the models had an area under the ROC above 0.9. However, the best model was the random forest. Since the random forest performed best, that is the model I will use.
 
 
@@ -388,7 +390,7 @@ plot_confusion_matrix(cm$`Confusion Matrix`[[1]])
 ```
 
 
-![png](D:/Data_projects/Airline Passanger Satisfaction With Tidymodels/confusion matrix.png)
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/confusion matrix.png)
 
 ### The confusion matrix shows us that the model was able to predict the 94.9% of the “satisfied” labels correctly and 93.6%  of the “neutral or dissatisfied” labels correctly on the testing set. 
 
@@ -402,6 +404,7 @@ rf_test_results$.predictions[[1]] %>%
 
 ### Lastly, here is the ROC for the “neutral or dissatisfied” class.
 
+![png](https://raw.githubusercontent.com/Steve-Pilato/Steve-Pilato.github.io/master/images/airline_photos/confusion matrix.png)
 
 ## And that’s it! This model still needs fine tuning. There was more exploration that could have been done with the hyperparameter tuning. There are also other models I would like to try out to see if I might be able to achieve better performance. Thank you for reading and please feel free to message me if you have any questions or comments! 
 
