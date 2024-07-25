@@ -16,7 +16,7 @@ mathjax: "true"
 
 ### Let's first consider a standard 6 sided die. How much would we expect to move across the board? Since each number is equally likely, then $$ P(rolling \ any \ side \ of \ a \ 6 \ sided \ die) = \frac{1}{6}$$ or 0.167. So, our random variable (X) follows a discrete uniform distribution.
 
-```{r, echo=F, warning=F, comment=F}
+```R
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(dplyr))
@@ -24,7 +24,7 @@ suppressPackageStartupMessages(library(R6))
 options(dplyr.summarise.inform = FALSE)
 ```
 
-```{r}
+```R
 x <- 1:6
 d <- 1/6
 prob_df <- data.frame(x=x, probs = rep(d, 6))
@@ -36,13 +36,13 @@ ggplot(prob_df, aes(x=x,y=probs)) +
   scale_x_continuous(breaks = x, labels = x) +
   theme_bw()
 ```
-![](images/mario_party/6_die_uniform.png)
+![jpg](/images/mario_party/6_die_uniform.png)
 
 ### We can calculate the expected amount of spaces our player will move across the board with a 6 sided die with the following equation: $$ E[X] = \sum_{i=1}^{n}p_ix_i$$ this weights each value of our die by it's respective probability. If we expand this out for a 6 sided die we get: $$ E[X] = 1\frac{1}{6} + 2\frac{1}{6} + 3\frac{1}{6} + 4\frac{1}{6}+5\frac{1}{6} + 6\frac{1}{6} = 3.5 $$
 
 ### Now, when we consider our base 10 sided die, the probability of rolling a particular number decreases, but the expected value increases.
 
-```{r}
+```R
 x <- 1:10
 d <- 1/10
 prob_df <- data.frame(x=x, probs = rep(d, 10))
@@ -55,17 +55,15 @@ ggplot(prob_df, aes(x=x,y=probs)) +
   theme_bw() 
 ```
 
-![](images/mario_party/10_die_uniform.png)
+![jpg](/images/mario_party/10_die_uniform.png)
 
-### $$
-E[X] = 1\frac{1}{10} + 2\frac{1}{10} + 3\frac{1}{10} + 4\frac{1}{10} + 5\frac{1}{10} + 6\frac{1}{10} + 7\frac{1}{10} + 8\frac{1}{10} + 9\frac{1}{10} + 10\frac{1}{10}= 5.5
-$$
+### $$ E[X] = 1\frac{1}{10} + 2\frac{1}{10} + 3\frac{1}{10} + 4\frac{1}{10} + 5\frac{1}{10} + 6\frac{1}{10} + 7\frac{1}{10} + 8\frac{1}{10} + 9\frac{1}{10} + 10\frac{1}{10}= 5.5 $$
 
 ### Things change when we consider more than 1 die. This is because we sum the values of all dice thrown to know how far we move. Due to the linearity of expectation, we can find out how far a character would move on average (for more than 1 die) by calculating the individual expectations for each die and summing them. More specifically: $$E[X + Y] = E[X] + E[Y]$$ Since we know that $$E[X] = 5.5$$ for one 10 sided, than E\[Y\] for another 10 sided die is the same. $$E[X] = E[Y] = 5.5 $$ We can then sum both individual expectations to get: $$E[X] + E[Y] = 11$$
 
 ### Below is what the probability mass function looks like for summing two 10 sided dice.
 
-```{r}
+```R
 d1 <- 1:10
 d2 <- 1:10
 outcomes <- length(d1) * length(d2)
@@ -83,11 +81,11 @@ ggplot(data = two_dice, aes(x=sum,y=`p(x)`)) +
   theme_bw() +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 ```
-![](images/mario_party/2d10_pmf.png)
+![jpg](/images/mario_party/2d10_pmf.png)
 
 ### As you can see, the range of possible values is larger for two dice versus one. Not only that, but the probability of rolling at or above the single die maximum (10), is high as well.
 
-```{r}
+```R
 #Add grouping
 two_dice <- two_dice |>
   mutate(group = if_else(sum >= 10, 'X >= 10', 'X < 10'))
@@ -109,7 +107,7 @@ ggplot() +
   labs(fill="")
   
 ```
-![](images/mario_party/2d10_pm_max.png)
+![png](/images/mario_party/2d10_pm_max.png)
 
 ### This tells us that we have a 64% chance of rolling at or above a 10 when we have two dice. Much higher than the 10% chance we would have of rolling a 10 with one die.
 
@@ -121,7 +119,7 @@ ggplot() +
 
 ### What I am going to do is simulate 20 turns (rolls) and calculate the cumulative distance traveled by two players. One player will use the "choose roll" die block exclusively and the other will use two 10 sided dice exclusively.
 
-```{r}
+```R
 # Create dice
 d1 <- 1:10
 d2 <- 1:10
@@ -161,11 +159,11 @@ ggplot(data = movement, aes(x = turns, y = cumulative_movement, group = player, 
   ggtitle('Distance Travaled By Simulated Player')
 
 ```
-![](images/mario_party/cumulative_dist_choose_single.png)
+![png](/images/mario_party/cumulative_dist_choose_single.png)
 
 ### It looks like player 1 with the two 10 sided dice traveled the furthest for this particular game. It is important to note that this only represents one game and the outcome might be different if we play multiple games. Let's simulate 100 games and see what happens.
 
-```{r}
+```R
 set.seed(123)
 
 # Create dice
@@ -226,11 +224,11 @@ ggplot() +
   ylim(0, 400) +
   ggtitle('Distance Travaled By Simulated Player')
 ```
-![](images/mario_party/cumulative_dist_choose_many.png)
+![png](/images/mario_party/cumulative_dist_choose_many.png)
 
 ### We can see that player 2 now has some games with a higher cumulative distance than player 1. Though it looks like player 1 moved further for the majority of the games. We can actually quantify who moved further across all games.
 
-```{r}
+```R
 # Get the max value for each game for player 1
 player1_ending_value <- all_games_player1 %>%
   group_by(game) %>%
@@ -258,17 +256,17 @@ ggplot(data = wins_by_distance_traveled, aes(x = most_moved_player, y = n)) +
   ylab('Wins (in terms of distance traveled)') +
   xlab('player')
 ```
-![](images/mario_party/choose_2d10_outcome.png)
+![png](/images/mario_party/choose_2d10_outcome.png)
 
 ### Out of the 100 games, player 1 (two dice) had the highest cumulative distance for 81 games compared to player 2 ("choose roll" die block) who had the highest cumulative distance for 19 games.
 
 ### One thing that I think is neat is that we can confirm our expectation calculation for the two 10 sided dice by fitting a linear regression model on all the simulated games for player 1.
 
-```{r}
+```R
 model <- lm(data = all_games_player1, cumulative_movement ~ turns)
 summary(model)
 ```
-
+<body>
 Call:
 lm(formula = cumulative_movement ~ turns, data = all_games_player1)
 
@@ -286,6 +284,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 14.07 on 1998 degrees of freedom
 Multiple R-squared:  0.9534,	Adjusted R-squared:  0.9534 
 F-statistic: 4.089e+04 on 1 and 1998 DF,  p-value: < 2.2e-16
+</body>
 
 ### The above output tells us that on average we should expect our player's cumulative distance to increase by 11.04 (coefficient for turns) for each turn that goes by. Very close to our calculation above that gave us an expected value of 11.
 
@@ -293,7 +292,7 @@ F-statistic: 4.089e+04 on 1 and 1998 DF,  p-value: < 2.2e-16
 
 ### The probability mass function for three 10 sided dice can be seen below.
 
-```{r}
+```R
 d1 <- 1:10
 d2 <- 1:10
 d3 <- 1:10
@@ -313,11 +312,11 @@ ggplot(data = three_dice, aes(x=sum,y=`p(x)`)) +
   ylim(0, .1) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) 
 ```
-![](images/mario_party/3d10_pmf.png)
+![png](/images/mario_party/3d10_pmf.png)
 
 ### Similar to above, let's see what the probability of rolling at or above a 20 is for both a pair of dice and three dice.
 
-```{r}
+```R
 #Add grouping
 three_dice <- three_dice |>
   mutate(group = if_else(sum >= 20, 'X >= 20', 'X < 20'))
@@ -340,13 +339,13 @@ ggplot() +
   labs(fill="")
 ```
 
-![](images/mario_party/3d10_pmf_max.png)
+![png](/images/mario_party/3d10_pmf_max.png)
 
 ### Based on the above figure, the probability of rolling at or above the two dice maximum (20) is 28.3%.
 
 ### Now let's run another simulation, this time adding a player who exclusively has three 10 sided dice.
 
-```{r}
+```R
 set.seed(123)
 
 # Create dice
@@ -414,11 +413,11 @@ ggplot() +
   ylim(0, 400) +
   ggtitle('Distance Travaled By Simulated Player')
 ```
-![](images/mario_party/all_dice_type_cumulative_dist_per_turn_per_game.png)
+![png](/images/mario_party/all_dice_type_cumulative_dist_per_turn_per_game.png)
 
 ### If we look at turn 20 alone, it seems clear that player 3 crushes the competition. Player 2's boxplot does not overlap with player 3's box-plot at all with the exception of one outlier game.
 
-```{r, comment=F, warning=F, warn.}
+```R
 #Get max value for player 2
 player2_ending_value <- max(all_games_player2$cumulative_movement)
 
@@ -454,13 +453,13 @@ ggplot(data = all_game_outcomes, aes(x = most_moved_player, y = n)) +
 
 ```
 
-![](images/mario_party/wins_in_terms_of_distance.png)
+![png](/images/mario_party/wins_in_terms_of_distance.png)
 
 ### In terms of distance traveled, player 3 moved the most in all 100 games.
 
 ### The last thing I would like to simulate here is an actual game board where stars will be placed randomly across the board. If a player lands at a space with a star, we will assume the player will purchase said star. Once a purchase occurs, the star will be randomly placed on the board again.
 
-```{r, warning=F, comment=F}
+```R
 set.seed(123)
 
 x <- c(rep(0, 20), 0:19, rep(19, 20), 19:0)
@@ -493,7 +492,7 @@ ggplot(data = game_board, aes(x = x, y = y, group = 1, color = `Star Location`))
       geom_segment(aes(x = 20, y = -1, xend = 0, yend = -1), arrow = arrow(), lwd = 1, color = 'darkgray') +
   geom_text(aes(x = 10, y = 10, label = "Simulated Mario Party Game Board"), color = 'red',  size = 5, fontface = "bold")
 ```
-![](images/mario_party/gameboard.png)
+![png](/images/mario_party/gameboard.png)
 
 ### This is defintly not a good looking game, but this will be the board I use for the simulation. Note that each space has an index assigned to it, which will determine where there player is located. You can see that a star has been placed at an index randomly. The first player to get to this space first will get the star.
 
@@ -573,7 +572,7 @@ print = function(...){
 
 ### The full code can be seen below.
 
-```{r}
+```R
 # Create a player object using R6 that contains die type and position of player
 player <- R6Class("player", list(
   name = NULL, #player name
@@ -694,7 +693,7 @@ player <- R6Class("player", list(
 
 ### Now let's simulate our game!
 
-```{r}
+```R
 set.seed(123)
 
 #number of turns in game
@@ -775,7 +774,7 @@ for(curr_turn in 1:number_of_turns){
 
 ### Let's see who reached the most stars
 
-```{r}
+```R
 game_outcome <- data.frame(
   stars = c(p1$stars, p2$stars, p3$stars, p4$stars),
   player = c(p1$die, p2$die, p3$die, p4$die)
@@ -807,7 +806,7 @@ ggplot(data = game_rolls, aes(x = player, y = roll)) +
 
 ### It looks like this is approximatly in line with our expectation calculations. So it is likely that player 2 ended up having stars randomly placed close to them. Let's now run a simulation with 100 games of 60 turns each.
 
-```{r}
+```R
 set.seed(123)
 #Number of games to play
 number_of_games <- 100
@@ -897,7 +896,7 @@ for(current_game in 1:number_of_games){
 all_games <- bind_rows(game_results)
 ```
 
-```{r}
+```R
 #Calculate winner of each game
 all_games %>%
   group_by(game....rep.game_name..4.) %>%
@@ -911,9 +910,9 @@ all_games %>%
   xlab("Dice Type") +
   ggtitle("Most stars reached (win) across games")
 ```
-![](images/mario_party/all_dice_type_winner.png)
+![png](/images/mario_party/all_dice_type_winner.png)
 
-```{r}
+```R
 ggplot(data = all_games, aes(x = player, y = stars)) +
   geom_boxplot(color = 'darkgray') +
   geom_jitter(color = 'royalblue') +
@@ -921,7 +920,7 @@ ggplot(data = all_games, aes(x = player, y = stars)) +
   xlab("Dice Type") +
   ggtitle("Number of stars reached by player")
 ```
-![](images/mario_party/all_dice_type_boxplot.png)
+![png](/images/mario_party/all_dice_type_boxplot.png)
 
 ### After playing 100 games, the player who reached the most stars across games was the player with 3 d10s. These dice also had  the highest median number of stars reached. This is more in line with what I initially thought would happen when looking at the simulation with only one game.
 
