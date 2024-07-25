@@ -113,7 +113,7 @@ ggplot() +
 
 ### Therefore, it is no surprise that buying two dice is better than 1, but how does the "choose roll" die block compare? This die block allows you to roll a value between 1 and 10 with absolute certainty. So instead of having a 10% chance of rolling a 10 with the base die, we have a 100% chance of rolling a 10 (or any value for that matter).
 
-![](images/mario_party/you_choose_die.png)
+![png](/images/mario_party/you_choose_die.png)
 
 ### This comparison is interesting because there is no variability in the rolls for this die block. This is not true for the base single or pair of dice. You have a better than 50% (p = .64) chance of rolling greater than or equal to a 10 with the two dice. In contrast, you have a 36% (1-p) chance of rolling less than a 10. If we consider the expectation of two 10 sided dice, we know that on average we would expect to move 11 spaces. This is higher than the max value of the "choose roll" die block, though not by much. One way to test which die block moves you further is to simulate it!
 
