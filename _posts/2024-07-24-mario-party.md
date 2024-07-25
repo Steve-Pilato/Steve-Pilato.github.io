@@ -10,7 +10,7 @@ mathjax: "true"
 
 ### Mario Party Superstars is a Nintendo Switch game where the goal is to travel across virtual game boards to purchase stars. The player with the most stars wins the game. Only one star is out at a time, and varies in distance from players. In most cases, you want to roll as high as possible to ensure you reach the space containing the star before other players. Below is an example of what a board looks like.
 
-![](/images/mario_party/board example.jpg){width="300"}
+![jpg](/images/mario_party/board example.jpg)
 
 ### To start, each player has a base die block (1 d10) that ranges from 1 to 10. There are other die blocks that you can purchase for one time use: Two 10 sided dice (2 d10s), three 10 sided dice (3 d10s), and a 10 sided die block where you choose what number it lands on ("choose roll"). So my question is, which one should you choose if you can afford them?
 
@@ -36,7 +36,7 @@ ggplot(prob_df, aes(x=x,y=probs)) +
   scale_x_continuous(breaks = x, labels = x) +
   theme_bw()
 ```
-![jpg](/images/mario_party/6_die_uniform.png)
+![png](/images/mario_party/6_die_uniform.png)
 
 ### We can calculate the expected amount of spaces our player will move across the board with a 6 sided die with the following equation: $$ E[X] = \sum_{i=1}^{n}p_ix_i$$ this weights each value of our die by it's respective probability. If we expand this out for a 6 sided die we get: $$ E[X] = 1\frac{1}{6} + 2\frac{1}{6} + 3\frac{1}{6} + 4\frac{1}{6}+5\frac{1}{6} + 6\frac{1}{6} = 3.5 $$
 
