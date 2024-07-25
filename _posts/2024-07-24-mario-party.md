@@ -10,7 +10,7 @@ mathjax: "true"
 
 ### Mario Party Superstars is a Nintendo Switch game where the goal is to travel across virtual game boards to purchase stars. The player with the most stars wins the game. Only one star is out at a time, and varies in distance from players. In most cases, you want to roll as high as possible to ensure you reach the space containing the star before other players. Below is an example of what a board looks like.
 
-![jpg](/images/mario_party/board example.jpg)
+![jpg](/images/mario_party/board_example.jpg)
 
 ### To start, each player has a base die block (1 d10) that ranges from 1 to 10. There are other die blocks that you can purchase for one time use: Two 10 sided dice (2 d10s), three 10 sided dice (3 d10s), and a 10 sided die block where you choose what number it lands on ("choose roll"). So my question is, which one should you choose if you can afford them?
 
