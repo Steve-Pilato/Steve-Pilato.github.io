@@ -57,7 +57,9 @@ ggplot(prob_df, aes(x=x,y=probs)) +
 
 ![](images/mario_party/10_die_uniform.png)
 
-### $$ E[X] = 1\frac{1}{10} + 2\frac{1}{10} + 3\frac{1}{10} + 4\frac{1}{10} + 5\frac{1}{10} + 6\frac{1}{10} + 7\frac{1}{10} + 8\frac{1}{10} + 9\frac{1}{10} + 10\frac{1}{10}= 5.5 $$
+### $$
+E[X] = 1\frac{1}{10} + 2\frac{1}{10} + 3\frac{1}{10} + 4\frac{1}{10} + 5\frac{1}{10} + 6\frac{1}{10} + 7\frac{1}{10} + 8\frac{1}{10} + 9\frac{1}{10} + 10\frac{1}{10}= 5.5
+$$
 
 ### Things change when we consider more than 1 die. This is because we sum the values of all dice thrown to know how far we move. Due to the linearity of expectation, we can find out how far a character would move on average (for more than 1 die) by calculating the individual expectations for each die and summing them. More specifically: $$E[X + Y] = E[X] + E[Y]$$ Since we know that $$E[X] = 5.5$$ for one 10 sided, than E\[Y\] for another 10 sided die is the same. $$E[X] = E[Y] = 5.5 $$ We can then sum both individual expectations to get: $$E[X] + E[Y] = 11$$
 
