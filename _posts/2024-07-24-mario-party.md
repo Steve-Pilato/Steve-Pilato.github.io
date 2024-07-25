@@ -6,7 +6,7 @@ tags: [R, Stats]
 mathjax: "true"
 ---
 
-![png](images/mario_party/dice.jpg)
+![jpg](images/mario_party/dice.jpg)
 
 ### Mario Party Superstars is a Nintendo Switch game where the goal is to travel across virtual game boards to purchase stars. The player with the most stars wins the game. Only one star is out at a time, and varies in distance from players. In most cases, you want to roll as high as possible to ensure you reach the space containing the star before other players. Below is an example of what a board looks like.
 
