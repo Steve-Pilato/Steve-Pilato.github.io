@@ -21,7 +21,7 @@ mathjax: "true"
 $$ P(rolling \ any \ side \ of \ a \ 6 \ sided \ die) = \frac{1}{6}$$ 
 
 <br>
-or 0.167. So, our random variable (X) follows a discrete uniform distribution.
+### or 0.167. So, our random variable (X) follows a discrete uniform distribution.
 
 ```R
 suppressPackageStartupMessages(library(ggplot2))
@@ -74,9 +74,13 @@ ggplot(prob_df, aes(x=x,y=probs)) +
 
 $$E[X + Y] = E[X] + E[Y]$$
 
-<br> Since we know that $$E[X] = 5.5$$ for one 10 sided, than E\[Y\] for another 10 sided die is the same. $$E[X] = E[Y] = 5.5 $$ 
+<br> 
 
-<br> We can then sum both individual expectations to get: $$E[X] + E[Y] = 11$$
+### Since we know that $$E[X] = 5.5$$ for one 10 sided, than E\[Y\] for another 10 sided die is the same. $$E[X] = E[Y] = 5.5 $$ 
+
+<br> 
+
+### We can then sum both individual expectations to get: $$E[X] + E[Y] = 11$$
 
 ### Below is what the probability mass function looks like for summing two 10 sided dice.
 
