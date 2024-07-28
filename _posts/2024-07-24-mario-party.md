@@ -14,7 +14,14 @@ mathjax: "true"
 
 ### To start, each player has a base die block (1 d10) that ranges from 1 to 10. There are other die blocks that you can purchase for one time use: Two 10 sided dice (2 d10s), three 10 sided dice (3 d10s), and a 10 sided die block where you choose what number it lands on ("choose roll"). So my question is, which one should you choose if you can afford them?
 
-### Let's first consider a standard 6 sided die. How much would we expect to move across the board? Since each number is equally likely, then $$ P(rolling \ any \ side \ of \ a \ 6 \ sided \ die) = \frac{1}{6}$$ or 0.167. So, our random variable (X) follows a discrete uniform distribution.
+### Let's first consider a standard 6 sided die. How much would we expect to move across the board? Since each number is equally likely, then 
+
+<br>
+
+$$ P(rolling \ any \ side \ of \ a \ 6 \ sided \ die) = \frac{1}{6}$$ 
+
+<br>
+or 0.167. So, our random variable (X) follows a discrete uniform distribution.
 
 ```R
 suppressPackageStartupMessages(library(ggplot2))
@@ -38,8 +45,10 @@ ggplot(prob_df, aes(x=x,y=probs)) +
 ```
 ![png](/images/mario_party/6_die_uniform.png)
 
-### We can calculate the expected amount of spaces our player will move across the board with a 6 sided die with the following equation: $$ E[X] = \sum_{i=1}^{n}p_ix_i$$ this weights each value of our die by it's respective probability. If we expand this out for a 6 sided die we get: $$ E[X] = 1\frac{1}{6} + 2\frac{1}{6} + 3\frac{1}{6} + 4\frac{1}{6}+5\frac{1}{6} + 6\frac{1}{6} = 3.5 $$
-
+### We can calculate the expected amount of spaces our player will move across the board with a 6 sided die with the following equation: $$ E[X] = \sum_{i=1}^{n}p_ix_i$$ this weights each value of our die by it's respective probability. If we expand this out for a 6 sided die we get: 
+<br> 
+$$ E[X] = 1\frac{1}{6} + 2\frac{1}{6} + 3\frac{1}{6} + 4\frac{1}{6}+5\frac{1}{6} + 6\frac{1}{6} = 3.5 $$
+<br>
 ### Now, when we consider our base 10 sided die, the probability of rolling a particular number decreases, but the expected value increases.
 
 ```R
@@ -59,7 +68,15 @@ ggplot(prob_df, aes(x=x,y=probs)) +
 
 ### $$ E[X] = 1\frac{1}{10} + 2\frac{1}{10} + 3\frac{1}{10} + 4\frac{1}{10} + 5\frac{1}{10} + 6\frac{1}{10} + 7\frac{1}{10} + 8\frac{1}{10} + 9\frac{1}{10} + 10\frac{1}{10}= 5.5 $$
 
-### Things change when we consider more than 1 die. This is because we sum the values of all dice thrown to know how far we move. Due to the linearity of expectation, we can find out how far a character would move on average (for more than 1 die) by calculating the individual expectations for each die and summing them. More specifically: $$E[X + Y] = E[X] + E[Y]$$ Since we know that $$E[X] = 5.5$$ for one 10 sided, than E\[Y\] for another 10 sided die is the same. $$E[X] = E[Y] = 5.5 $$ We can then sum both individual expectations to get: $$E[X] + E[Y] = 11$$
+### Things change when we consider more than 1 die. This is because we sum the values of all dice thrown to know how far we move. Due to the linearity of expectation, we can find out how far a character would move on average (for more than 1 die) by calculating the individual expectations for each die and summing them. More specifically:
+
+<br>
+
+$$E[X + Y] = E[X] + E[Y]$$
+
+<br> Since we know that $$E[X] = 5.5$$ for one 10 sided, than E\[Y\] for another 10 sided die is the same. $$E[X] = E[Y] = 5.5 $$ 
+
+<br> We can then sum both individual expectations to get: $$E[X] + E[Y] = 11$$
 
 ### Below is what the probability mass function looks like for summing two 10 sided dice.
 
