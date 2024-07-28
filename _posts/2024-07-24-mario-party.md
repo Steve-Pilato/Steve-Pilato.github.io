@@ -24,11 +24,10 @@ $$ P(rolling \ any \ side \ of \ a \ 6 \ sided \ die) = \frac{1}{6}$$
 ### or 0.167. So, our random variable (X) follows a discrete uniform distribution.
 
 ```R
-suppressPackageStartupMessages(library(ggplot2))
-suppressPackageStartupMessages(library(tidyr))
-suppressPackageStartupMessages(library(dplyr))
-suppressPackageStartupMessages(library(R6))
-options(dplyr.summarise.inform = FALSE)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(R6)
 ```
 
 ```R
