@@ -179,7 +179,7 @@ ggplot(data = movement, aes(x = turns, y = cumulative_movement, group = player, 
   ggtitle('Distance Travaled By Simulated Player')
 
 ```
-![png](/images/mario_party/cumulative_dist_choose_single.png)
+![png](/images/mario_party/cumulative_dist_choose_single2.png)
 
 ### It looks like player 1 with the two 10 sided dice traveled the furthest for this particular game. It is important to note that this only represents one game and the outcome might be different if we play multiple games. Let's simulate 100 games and see what happens.
 
