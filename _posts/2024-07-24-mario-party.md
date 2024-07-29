@@ -515,7 +515,7 @@ ggplot(data = game_board, aes(x = x, y = y, group = 1, color = `Star Location`))
 ```
 ![png](/images/mario_party/gameboard.png)
 
-### This is defintly not a good looking game, but this will be the board I use for the simulation. Note that each space has an index assigned to it, which will determine where there player is located. You can see that a star has been placed at an index randomly. The first player to get to this space first will get the star.
+### This is defintly not a good looking game, but this will be the board I use for the simulation. Note that each space has an index assigned to it, which will determine where the player is located. You can see that a star has been placed at an index randomly. The first player to get to this space first will get the star.
 
 ### Let's create and run the simulation!
 
