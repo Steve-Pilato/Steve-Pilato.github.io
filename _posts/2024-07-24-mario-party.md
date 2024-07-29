@@ -75,7 +75,7 @@ $$E[X + Y] = E[X] + E[Y]$$
 
 <br> 
 
-### Since we know that $$E[X] = 5.5$$ for one 10 sided, than E\[Y\] for another 10 sided die is the same. $$E[X] = E[Y] = 5.5 $$ 
+### Since we know that $$E[X] = 5.5$$ for one 10 sided, than $$E[Y]$$ for another 10 sided die is the same. $$E[X] = E[Y] = 5.5 $$ 
 
 <br> 
 
