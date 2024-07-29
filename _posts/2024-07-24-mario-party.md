@@ -137,7 +137,7 @@ ggplot() +
 
 ### This comparison is interesting because there is no variability in the rolls for this die block. This is not true for the base single or pair of dice. You have a better than 50% (p = .64) chance of rolling greater than or equal to a 10 with the two dice. In contrast, you have a 36% (1-p) chance of rolling less than a 10. If we consider the expectation of two 10 sided dice, we know that on average we would expect to move 11 spaces. This is higher than the max value of the "choose roll" die block, though not by much. One way to test which die block moves you further is to simulate it!
 
-### What I am going to do is simulate 20 turns (rolls) and calculate the cumulative distance traveled by two players. One player will use the "choose roll" die block exclusively and the other will use two 10 sided dice exclusively.
+### What I am going to do is simulate 20 turns (rolls) and calculate the cumulative distance traveled by two players. One player will use the "choose roll" die block exclusively (assume the player will always choose 10) and the other will use two 10 sided dice exclusively.
 
 ```R
 # Create dice
