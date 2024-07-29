@@ -807,10 +807,11 @@ ggplot(data = game_outcome, aes(x=reorder(player,-stars), y = stars)) +
   xlab("Dice Type") +
   ggtitle("Number of stars reached by player")
 ```
+![png](/images/mario_party/first_board_game_outcome.png)
 
 ### So this is an interesting outcome. Player 2 with 2 d10s reached the most stars. As we have seen above, the player with 3 10s is expected to move the furthest compared to other dice you can buy in the game. It's possible that for this particular game, player 2 rolled higher than the expected value of 11. Let's take a look.
 
-```{r}
+```R
 game_rolls <- data.frame(
   roll = c(p1$rolls, p2$rolls, p3$rolls, p4$rolls),
   player = c(rep(p1$die, length(p1$rolls)), rep(p2$die, length(p2$rolls)), rep(p3$die, length(p3$rolls)), rep(p4$die, length(p4$rolls)))
@@ -823,6 +824,7 @@ ggplot(data = game_rolls, aes(x = player, y = roll)) +
   xlab("Dice Type") +
   ggtitle("Rolls for each player")
 ```
+![png](/images/mario_party/first_board_game_outcome_box.png)
 
 ### It looks like this is approximatly in line with our expectation calculations. So it is likely that player 2 ended up having stars randomly placed close to them. Let's now run a simulation with 100 games of 60 turns each.
 
