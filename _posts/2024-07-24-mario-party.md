@@ -286,7 +286,8 @@ ggplot(data = wins_by_distance_traveled, aes(x = most_moved_player, y = n)) +
 model <- lm(data = all_games_player1, cumulative_movement ~ turns)
 summary(model)
 ```
-<body>
+<div class="cell-output cell-output-stdout">
+<pre><code>
 Call:
 lm(formula = cumulative_movement ~ turns, data = all_games_player1)
 
@@ -295,16 +296,16 @@ Residuals:
 -47.362  -8.896  -0.667   8.186  60.638 
 
 Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
+            Estimate Std. Error t value Pr(&gt;|t|)    
 (Intercept) -0.36911    0.65378  -0.565    0.572    
-turns       11.03653    0.05458 202.220   <2e-16 ***
+turns       11.03653    0.05458 202.220   &lt;2e-16 ***
 ---
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 14.07 on 1998 degrees of freedom
-Multiple R-squared:  0.9534,	Adjusted R-squared:  0.9534 
-F-statistic: 4.089e+04 on 1 and 1998 DF,  p-value: < 2.2e-16
-</body>
+Multiple R-squared:  0.9534,    Adjusted R-squared:  0.9534 
+F-statistic: 4.089e+04 on 1 and 1998 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
 
 ### The above output tells us that on average we should expect our player's cumulative distance to increase by 11.04 (coefficient for turns) for each turn that goes by. Very close to our calculation above that gave us an expected value of 11.
 
