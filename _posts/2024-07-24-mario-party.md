@@ -534,7 +534,7 @@ player <- R6Class("player", list(
 
 ### Name is arbitrary for the object. Die is initialized as NA but will be important for a method I define in the next section. The position attribute is initialized at 1 so that each player has the same starting point. Rolls is initialized as an empty vector that will store the roll a player had during a given turn. Stars is the number of stars a player has reached.
 
-### Next I will define an initialize method
+### Next I will define an initialize method. When an object is created, the name and die type are defined by the user.
 
 ```{default}
 initialize = function(name, die){
@@ -543,7 +543,7 @@ initialize = function(name, die){
 }
 ```
 
-### When an object is created, the name and die type are defined by the user.
+### The roll_move method is dictated by the die type the player is assigned. In the above example, the object checks the die type in an "if" statement and uses the rolling capabilities of that die type. When a roll occurs, it is stored in the rolls attribute. Next, I calculate the spaces the player will visit and store those indices in the visted_spaces variable. It is possible that the roll might exceed the game boards maximum index. For those spaces that are above said maximum, I subtract the max index. This way the player keeps going around the board.
 
 ```{default}
 roll_move = function(){
@@ -564,8 +564,7 @@ roll_move = function(){
     }
 }
 ```
-
-### The roll_move method is dictated by the die type the player is assigned. In the above example, the object checks the die type in an "if" statement and uses the rolling capabilities of that die type. When a roll occurs, it is stored in the rolls attribute. Next, I calculate the spaces the player will visit and store those indices in the visted_spaces variable. It is possible that the roll might exceed the game boards maximum index. For those spaces that are above said maximum, I subtract the max index. This way the player keeps going around the board.
+### Lastly, I loop through each space the player lands on and check to see if that index contains a star. If there is a star located at that index, I increment the star attribute by 1.
 
 ```{default}
 #Initiate player movement
@@ -577,9 +576,6 @@ roll_move = function(){
   }
   self$position <- tail(visted_spaces, n=1)
 ```
-
-### Lastly, I loop through each space the player lands on and check to see if that index contains a star. If there is a star located at that index, I increment the star attribute by 1.
-
 ### The only other method in the object allows for printing useful information on the player.
 
 ```{default}
